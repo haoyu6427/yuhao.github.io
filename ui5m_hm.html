@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="Description" content="Basic Gray">
+    <meta name="author" content="CoffeeCup Software, Inc.">
+    <meta name="Copyright" content="Copyright (c) 2010 CoffeeCup, all rights reserved.">
+	<title>Understand "Heat Map" in 5min</title>
+    <link rel="stylesheet" href="stylesheets/default.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="javascripts/behavior.js"></script>
+    <!--[if IE]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+    <section id="intro3">
+    	<h2>Heat-Map-based Algorithm for Group Activity Recognition</h2>
+        <h3>Goal</h3>
+		<p>Classify group activities in surveillance videos.<br>
+		<b>Example:</b> The camera sees a bunch of people, what are they doing? Gathering? Separating? Standing still? Or chasing?</p>
+		
+		<h3>Method</h3>
+		<p><b>Step 1:</b> Treat each object as a moving heat source, create heat map.<br>
+		<b>Example:</b> If this is what the camera sees (single object):<br>
+		<center><img src="ui5m/HM/videoHM.gif" alt="tracked video" style="width:150px;height:150px"></center>
+		Then this is what its heat map looks like:<br>
+		<center><img src="ui5m/HM/HM2D.gif" alt="heatmap 2d" style="width:150px;height:150px">
+		<img src="ui5m/HM/HM3D.gif" alt="heatmap 3d" style="width:150px;height:150px"></center>
+		Different types of activity form different heat map shapes, for example 2-object activities:<br>
+		<center><img src="ui5m/HM/img1.png" alt="heatmaps" style="width:522px;height:300px"></center>
+		<b>Step 2:</b> Align heat map.<br>
+		<b>Example:</b> Original heat maps:<br>
+		<center><img src="ui5m/HM/img2.png" alt="before alignment" style="width:478px;height:150px"></center>
+		Aligned heat maps:<br>
+		<center><img src="ui5m/HM/img3.png" alt="after alignment" style="width:478px;height:150px"></center>
+		<b>Step 3:</b> Classification!<br>
+		<b>Example:</b> kNN, PCA-LDA, SVM, sparse...
+		</p>
+		
+		<h3>References</h3>
+		[1] Hang Chu, Weiyao Lin*, Jianxin Wu, Xingtong Zhou, Yuanzhe Chen, and Hongxiang Li, A New Heat-Map-based Algorithm for Human Group Activity Recognition, <i>ACM Multimedia (ACM MM)</i>, 2012. [<a href="files/publications/ACM_MM_12.pdf">pdf</a>]<br>
+		[2] Hang Chu*, Weiyao Lin*, Jianxin Wu, Bin Sheng, and Zhenzhong Chen, A Heat-Map-based Algorithm for Recognizing Group Activities in Videos, <i>IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)</i>, 2013. [<a href="files/publications/TCSVT_13.pdf">pdf</a>]
+    </section>
+</body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59284902-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>

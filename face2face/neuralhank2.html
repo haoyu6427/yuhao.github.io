@@ -1,0 +1,319 @@
+<HTMLQuestion xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2006-07-14/ExternalQuestion.xsd">
+<HTMLContent>
+<!DOCTYPE html>
+<html>
+<head>
+<title>NeuralHank2 - The Chatbot</title>
+<meta http-equiv='Content-Type' content='text/html, charset=UTF-8, width=device-width,initial-scale=1' name="viewport" />
+<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" integrity="sha384-IS73LIqjtYesmURkDE9MXKbXqYA8rvKEp/ghicjem7Vc3mGRdQRptJSz60tvrB6+" rel="stylesheet" />
+
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js" integrity="sha384-s1ITto93iSMDxlp/79qhWHi+LsIi9Gx6yL+cOKDuymvihkfol83TYbLbOw+W/wv4" crossorigin="anonymous"></script>
+
+<script type='text/javascript' src='./rangyinputs-jquery-src.js'></script>
+<script type="text/javascript" src="./caption.json"></script>
+
+<script>
+var captiondata = JSON.parse(data);
+
+var base_url = 'http://chuhang.github.io/face2face';
+
+function gup(name)
+{
+	var regexS = "[\\?&]"+name+"=([^&#]*)";
+    var regex = new RegExp( regexS );
+    var tmpURL = window.location.href;
+    var results = regex.exec( tmpURL );
+    if( results == null )
+        return "";
+    else
+        return results[1];
+}
+
+var result=[0,0,0];
+var played=[0,0];
+var namelist=['result_0000', 'result_0087', 'result_0200', 'result_0301', 'result_0375', 'result_0454', 'result_0005', 'result_0095', 'result_0215', 'result_0320', 'result_0398', 'result_0465', 'result_0019', 'result_0099', 'result_0226', 'result_0332', 'result_0399', 'result_0471', 'result_0021', 'result_0101', 'result_0236', 'result_0337', 'result_0407', 'result_0472', 'result_0040', 'result_0110', 'result_0242', 'result_0342', 'result_0418', 'result_0479', 'result_0044', 'result_0121', 'result_0248', 'result_0347', 'result_0426', 'result_0481', 'result_0045', 'result_0148', 'result_0251', 'result_0353', 'result_0436', 'result_0482', 'result_0057', 'result_0169', 'result_0260', 'result_0356', 'result_0438', 'result_0485', 'result_0071', 'result_0192', 'result_0280', 'result_0360', 'result_0441', 'result_0492', 'result_0079', 'result_0193', 'result_0286', 'result_0361', 'result_0443', 'result_0496', 'result_0085', 'result_0199', 'result_0292', 'result_0372', 'result_0446'];
+var methodlist=['video_nomicro_mp4','video_nogan_mp4','video_gan_mp4'];
+
+$(document).ready(function() 
+{
+	get_data_url();
+
+	function get_data_url()
+	{
+		var query_text='';
+		var vid1_type='';
+		var vid2_type='';
+		var videostr = get_video_name();
+		var cat_img_name = get_video_file_name(videostr);
+		var vid1_type = get_id1(videostr);
+		var vid2_type = get_id2(videostr);
+		for (var i in captiondata) 
+		{
+			if(captiondata[i].video_name === cat_img_name)
+			{
+				query_text=captiondata[i].query;
+			}
+		}
+		console.log('Loading videos and query.')
+		var video = document.getElementById('vid1');
+		var source = document.createElement('source');
+		console.log(base_url+'/'+vid1_type+'/'+cat_img_name+'.mp4');
+		source.setAttribute('src', base_url+'/'+vid1_type+'/'+cat_img_name+'.mp4');
+		video.appendChild(source);
+		var video = document.getElementById('vid2');
+		var source = document.createElement('source');
+		source.setAttribute('src', base_url+'/'+vid2_type+'/'+cat_img_name+'.mp4');
+		video.appendChild(source);
+		$("#query1").text('Human sentence: "'+query_text+'"');
+	}
+	
+	function get_video_name()
+	{
+		var cat_img_name = gup('video');
+		if(cat_img_name == "")
+		{
+			cat_img_name = "0_0_1";
+		}
+		return cat_img_name;
+	}
+	
+	function get_video_file_name(cat_img_name)
+	{
+		var n = cat_img_name.indexOf("_");
+		var videoid = parseInt(cat_img_name.substring(0,n));
+		return namelist[videoid];
+	}
+	
+	function get_id1(cat_img_name)
+	{
+		var n = cat_img_name.indexOf("_");
+		var id1 = parseInt(cat_img_name.substring(n+1,n+2));
+		return methodlist[id1];
+	}
+	
+	function get_id2(cat_img_name)
+	{
+		var n = cat_img_name.indexOf("_");
+		var id2 = parseInt(cat_img_name.substring(n+3,n+4));
+		return methodlist[id2];
+	}
+
+	function submitResults()
+	{  
+		if(result.length!=3)
+		{
+			alert("Unknown error!");
+			return;
+		}
+		for(i=0;i<3;i++)
+		{
+			if(result[i]==0)
+			{
+				alert("Please answer all questions.")
+				return;
+			}
+		}
+		if((played[0]+played[1])!=2)
+		{
+			alert("Come on! Please watch the two videos first...")
+			return;
+		}
+		var finalresult=[];
+		for(i=0;i<3;i++)
+		{
+			finalresult.push(result[i]);
+		}
+		var videostr = get_video_name();
+		var cat_img_name = get_video_file_name(videostr);
+		var vid1_type = get_id1(videostr);
+		var vid2_type = get_id2(videostr);
+		finalresult.push(cat_img_name);
+		finalresult.push(vid1_type);
+		finalresult.push(vid2_type);
+		submit_result= finalresult.join("&");
+		document.getElementById('segpoly').value = submit_result;
+		console.log(submit_result);
+		document.forms["mturk_form"].submit();
+	}
+	
+	$("input").mousedown(function(e)
+	{
+		if ($(this).hasClass('unselectable'))
+		{
+			e.preventDefault();
+			switch (this.name)
+			{
+				case "SubmitResults":
+					submitResults();
+					break;
+			}
+		}
+	});
+});
+function play(num)
+{
+	if (num==1)
+	{
+		var video = document.getElementById('vid1');
+	}
+	if (num==2)
+	{
+		var video = document.getElementById('vid2');
+	}
+	played[num-1]=1;
+	video.volume=1.0;
+	video.play();
+}
+function selectchange(sel,num)
+{
+	result[num-1]=sel.options[sel.selectedIndex].value;
+	console.log(result);
+}
+</script>
+</head>
+
+  <body>
+<section><!-- Instructions -->
+<!-- End Instructions --><!-- Image Transcription Layout -->
+
+<div class="row" id="workContent">
+<div class="col-xs-12 col-sm-8 col-md-12 image">
+
+<h3>The robot is trying to respond to a sentence written by a human. <br>Please evaluate how interesting and relevant and natural the response is. <br>You will get to see two possible responses to the same human sentence. <br>Please help us pick the better one.</h3>
+<h3>Please read the human sentence, watch and listen the two robot responses. <br>Pay attention to both robot words and facial expressions. <br>Then answer the questions.</h3>
+<h2><font color="red">Note: please have html5 video player enabled, videos have sound.</font></h2>
+<table border="1">
+<col width="600">
+<col width="600">
+<tr>
+<td colspan="2"><i><u><h1 id="query1"></h1></u></i></td>
+</tr>
+<tr>
+<td><div class="cropper"><video id="vid1" width="1200"><source id="vid1_src" src="" type="video/mp4">You're unable to do this task because your browser does not support HTML5 video.</video></div></td>
+<td><div class="cropper"><video id="vid2" width="1200"><source id="vid2_src" src="" type="video/mp4">You're unable to do this task because your browser does not support HTML5 video.</video></div></td>
+</tr>
+<tr>
+<td><h3>Robot Response1</h3><button type="button" onclick="play(1)" style="background-color:green">play</button></td>
+<td><h3>Robot Response2</h3><button type="button" onclick="play(2)" style="background-color:green">play</button></td>
+</tr>
+</table>
+
+<h2>Questions:</h2>
+<font color="red">
+<h3>A good robot response is:
+<ul>
+<li>related to the human sentence and meaningful</li>
+<li>interesting so the robot is fun to chat with, not just simple boring yes and no answers</li>
+<li>has natural facial expressions that goes along well with his words</li>
+</ul></h3></font>
+<p>1. In terms of only the words, which response is the better? <select onchange="selectchange(this,1)">
+  <option value="0" selected>---------</option>
+  <option value="1">Response1</option>
+  <option value="2">Response2</option>
+</select></p>
+<p>2. In terms of only the facial expressions, which response is the better? <select onchange="selectchange(this,2)">
+  <option value="0" selected>---------</option>
+  <option value="1">Response1</option>
+  <option value="2">Response2</option>
+</select></p>
+<p>3. In terms of both words and facial expressions, which response is the better? <select onchange="selectchange(this,3)">
+  <option value="0" selected>---------</option>
+  <option value="1">Response1</option>
+  <option value="2">Response2</option>
+</select></p>
+</div>
+
+</div>
+</div>
+</div>
+</ul>
+</li>
+</div>
+
+<hr class="style13">
+
+</div>
+
+<div class="row" id="workContent">
+  <div align=center>
+    <table width=420> 
+      <tr align=center><td>
+        <form id="mturk_form" method="POST" action="https://www.mturk.com/mturk/externalSubmit">
+          <input type="hidden" id="assignmentId" name="assignmentId" value="">
+          <input type="hidden" id="segpoly" name="results" value="">
+          <input class="unselectable btn btn-success" id="submitButton" type="button" name="SubmitResults" value="Submit Results">
+        </form>
+      </td></tr>
+    </table>
+  </div>
+</div>
+</section>
+
+    <script type="text/javascript">
+        document.getElementById('assignmentId').value = gup('assignmentId');
+        //
+        // Check if the worker is PREVIEWING the HIT or if they've ACCEPTED the HIT
+        //
+        console.log(gup('assignmentId'));
+        if (gup('assignmentId') == "ASSIGNMENT_ID_NOT_AVAILABLE")
+        {
+            // If we're previewing, disable the button and give it a helpful message
+            document.getElementById('submitButton').disabled = true;
+            document.getElementById('submitButton').value = "You must ACCEPT the HIT before you can submit the results.";
+        } else {
+            var form = document.getElementById('mturk_form');
+            form.action = "https://www.mturk.com/mturk/externalSubmit";
+            //if (document.referrer && ( document.referrer.indexOf('workersandbox') != -1) ) {
+              // form.action = "https://workersandbox.mturk.com/mturk/externalSubmit";
+             //   form.action = "https://www.mturk.com/mturk/externalSubmit";
+           // }
+        }
+    </script>
+
+<!-- End Image Transcription Layout --><!-- Open internal style sheet -->
+<style type="text/css">#collapseTrigger{
+  color:#fff;
+  display: block;
+  text-decoration: none;
+}
+#submitButton{
+  white-space: normal;
+}
+.image{
+  margin-bottom: 15px; 
+}
+.group-label{
+  display: block;
+}
+.radio-inline>label{
+  font-weight: normal;
+}
+.history, .history th,  .history td {
+    border: 1px solid black;
+}
+hr.style13 {
+    height: 10px;
+    border: 0;
+    box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+.cropper{
+    width: 600px;
+    overflow:hidden;
+    display:block;
+    height: 600px;
+}
+#vid1{
+    margin-left: -290px;
+	margin-top: -50px;
+}
+#vid2{
+    margin-left: -290px;
+	margin-top: -50px;
+}
+</style>
+
+  </body>
+
+  </html>
+  </HTMLContent>
+</HTMLQuestion>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Additional Qualitative Results</h2>
+
+<h3> 1. Without using the musical scale technique:</h3>
+<audio controls>
+  <source src="ours_no_scale_technique.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</p>
+In this experiment, we remove conditioning on scale in our method. This does not perform well. One can hear that the generated music changes notes too quickly, and the overall music sounds worse than that produced with the conditional model. This is because without scale identification and scale starting note “normalization”, all notes appear frequently in the training data, which makes learning more difficult. It should be noted that the Magenta baseline does not show this quick note change as they introduced holding and repeating as new notes.
+</p>
+<h3> 2. Applying similar post-processing to the Magenta baseline:</h3>
+(Left: before. Right: after.)<br>
+<audio controls>
+  <source src="magenta.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+<audio controls>
+  <source src="magenta_ta.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</p>
+In this experiment, we apply the same temporal alignment post-processing to the Magenta baseline. Post-processing here makes only a minor difference. Notes become more likely to be “on the beat” within a bar, but for methods that only has melody, the effect is barely noticeable. However, the problem of the baseline, such as the undesired long silence, still remains.
+</p>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>HouseCraft</title>
+<link rel="stylesheet" type="text/css" href="./files/pvg.css">
+</head>
+<body>
+
+<br>
+<h1>HouseCraft Project & SydneyHouse Dataset</h1>
+
+<h2>Index</h2>
+<ul>
+<li>
+<a href="./index.html#housecraft">HouseCraft</a>
+<ul>
+	<li><a href="./index.html#whatis">What is HouseCraft?</a></li>
+	<li><a href="./index.html#howdoes">How does HouseCraft work?</a></li>
+	<li><a href="./index.html#coderesults">Code, paper, and results</a></li>
+</ul>
+</li>
+<li>
+<a href="./index.html#sydneyhouse">SydneyHouse</a>
+<ul>
+	<li><a href="./index.html#theoriginal">The original SydneyHouse dataset</a></li>
+	<li><a href="./index.html#facade">SydneyHouse: facade parsing</a></li>
+	<li><a href="./index.html#point">SydneyHouse: point correspondence</a></li>
+	<li><a href="./index.html#annotation">SydneyHouse: annotation tool</a></li>
+</ul>
+</li>
+<li>
+<a href="./index.html#references">Citation</a>
+</li>
+<li>
+<a href="./index.html#team">Team</a>
+</li>
+</ul>
+<hr>
+
+<hr>
+<a name="housecraft"></a>
+<h2>HouseCraft</h2>
+<hr>
+
+<a name="whatis"></a>
+<h3>What is HouseCraft?</h3> 
+<center><img align="top" width="800" src="./files/whatis1.png"> </center><br>
+<p>In HouseCraft, we utilize rental ads to create realistic textured 3D models of building exteriors. In particular, we exploit the address of the property and its floorplan, which are typically available in the ad. The address allows us to extract Google StreetView images around the building, while the building’s floorplan allows for an efficient parametrization of the building in 3D via a small set of random variables. Our approach is able to precisely estimate the geometry and location of the property, and can create realistic 3D building models.</p>
+<p><b>Media</b><br>
+HouseCraft covered by <a href="https://www.youtube.com/watch?v=UBORpapdAfU">2 Minute Papers</a>. Thank you Károly!</p>
+<hr>
+
+<a name="howdoes"></a>
+<h3>How does HouseCraft work?</h3> 
+<center><img align="top" width="600" src="./files/howdoes1.png"> </center><br>
+<p>Starting from the address of the house (a), we propose an energy minimization framework which jointly reasons about the height of each floor, the vertical positions of windows and doors, as well as the precise location of the building in the world’s map, by exploiting several geometric and semantic cues from the StreetView imagery (b-f).</p>
+<hr>
+
+<a name="coderesults"></a>
+<h3>Code, paper, and results</h3>
+<p>Source code:</p>
+<ul><li><a href="https://github.com/chuhang/HouseCraft">https://github.com/chuhang/HouseCraft</a></li></ul>
+<p>Paper and supplemental material:</p>
+<ul><li><a href="../../files/publications/ECCV_16.pdf">paper & supp.</a></li></ul>
+<p>Demo and results:</p>
+<center><iframe src="https://player.vimeo.com/video/174261051" width="600" height="338" frameborder="10" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/174261051">demo_eccv16</a> from <a href="https://vimeo.com/user33036670">Hang Chu</a> on <a href="https://vimeo.com">Vimeo</a>.</p></center>
+<hr>
+
+<hr>
+<a name="sydneyhouse"></a>
+<h2>SydneyHouse</h2>
+<hr>
+
+<a name="theoriginal"></a>
+<h3>The original SydneyHouse dataset</h3>
+<center><img align="top" width="600" src="./files/original1.jpg"> </center><br>
+<p>174 random houses in Sydney with:</p>
+<ul>
+<li>Annotated floorplan</li>
+<li>Adress and map</li>
+<li>Up to three streetview images, with computed semantic features</li>
+<li>Accurate house location and vertical heights (in accordance with streetview observations)</li>
+</ul>
+<p>Download:</p>
+<ul><li><a href="https://www.dropbox.com/s/bwch3ttydto8zfc/SydneyHouse.zip?dl=0">SydneyHouse</a></li></ul>
+<hr>
+
+<a name="facade"></a>
+<h3>SydneyHouse: facade parsing</h3>
+<center><img align="top" width="600" src="./files/facade1.jpg"> </center><br>
+<p>An extra dataset derived from SydneyHouse, that contains rectified house facade images with labelled window, door, and garage.</p>
+<p>Download:</p>
+<ul><li><a href="https://www.dropbox.com/s/7fsl3l2fzysk1zi/SydneyHouse-facade.zip?dl=0">SydneyHouse-facade</a></li></ul>
+<hr>
+
+<a name="point"></a>
+<h3>SydneyHouse: point correspondence</h3>
+<center><img align="top" width="800" src="./files/facade1.gif"> </center><br>
+<p>An extra dataset derived from SydneyHouse, that contains dense point correspondences between streetviews. Currently 17.3K points, with sample rate 1 point/m.</p>
+<ul>
+<li>Compared to <a href="http://www.cs.cornell.edu/projects/bigsfm">BigSFM</a> and <a href="http://www.maths.lth.se/matematiklth/personal/calle/sys_paper/sys_paper.html">Stable SFM</a>, SydneyHouse-point offers more location variety.</li>
+<li>SydneyHouse-point is inspired by the <a href="http://3drepresentation.stanford.edu/">3D-Representation</a> dataset. SydneyHouse-point is much more accurate due to all houses have been manually aligned, though SydneyHouse-point has a smaller scale.</li>
+</ul>
+<p>Download:</p>
+<ul><li><a href="https://www.dropbox.com/s/vn27zxuneqhhc1j/SydneyHouse-point.zip?dl=0">SydneyHouse-point</a></li></ul>
+<hr>
+
+<a name="annotation"></a>
+<h3>SydneyHouse: annotation tool</h3>
+<center><img align="top" width="600" src="./files/annotate1.gif"> </center><br>
+<p>A WebGL-based annotation tool we used to create house ground truth information.</p>
+<p>Download:</p>
+<ul><li><a href="https://www.dropbox.com/s/8hasisth5togpmn/SydneyHouse-annotate.zip?dl=0">SydneyHouse-annotate</a></li></ul>
+<hr>
+
+<hr>
+<a name="references"></a>
+<h2>Citation</h2>
+Hang Chu, Shenlong Wang, Raquel Urtasun, Sanja Fidler. HouseCraft: Building Houses from Rental Ads and Street Views. ECCV 2016.
+<hr>
+
+<hr>
+<a name="team"></a>
+<h2>Team</h2>
+<center><img class="img-circle" src="./files/team1.png"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img class="img-circle" src="./files/team2.png"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img class="img-circle" src="./files/team3.png"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img class="img-circle" src="./files/team4.png"></center><br>
+<center>Hang Chu, Shenlong Wang, Raquel Urtasun, and Sanja Fidler
+</center><br>
+<center>University of Toronto
+</center><br>
+<hr>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59284902-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body></html>

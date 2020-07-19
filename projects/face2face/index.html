@@ -1,0 +1,522 @@
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-59284902-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-59284902-4');
+</script>
+
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+</head>
+
+<style type="text/css">
+    body {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight:300;
+        font-size:18px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1100px;
+    }
+
+    h1 {
+        font-weight:300;
+        margin: 0.4em;
+    }
+
+    p {
+        margin: 0.2em;
+    }
+
+    .disclaimerbox {
+        background-color: #eee;
+        border: 1px solid #eeeeee;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+        padding: 20px;
+    }
+
+    video.header-vid {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    img.header-img {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    img.rounded {
+        border: 1px solid #eeeeee;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    a:link,a:visited
+    {
+        color: #1367a7;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #208799;
+    }
+
+    td.dl-link {
+        height: 160px;
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+                0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                5px 5px 0 0px #fff, /* The second layer */
+                5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                10px 10px 0 0px #fff, /* The third layer */
+                10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+                15px 15px 0 0px #fff, /* The fourth layer */
+                15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+                20px 20px 0 0px #fff, /* The fifth layer */
+                20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+                25px 25px 0 0px #fff, /* The fifth layer */
+                25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+        margin-left: 10px;
+        margin-right: 45px;
+    }
+
+
+    .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+                0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                5px 5px 0 0px #fff, /* The second layer */
+                5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                10px 10px 0 0px #fff, /* The third layer */
+                10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-right: 30px;
+        margin-bottom: 5px;
+    }
+
+    .vert-cent {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    hr
+    {
+        margin: 0;
+        border: 0;
+        height: 1.5px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+	
+	.cropper{
+		width: 200px;
+		overflow:hidden;
+		display:block;
+		height: 200px;
+	}
+	#video2{
+		margin-left: -135px;
+		margin-top: -30px;
+	}
+	#video3{
+		margin-left: -135px;
+		margin-top: -30px;
+	}
+	#video4{
+		margin-left: -270px;
+		margin-top: -60px;
+	}
+	#video5{
+		margin-left: -270px;
+		margin-top: -60px;
+	}
+</style>
+
+<html>
+  <head>
+        <title>A Face-to-Face Neural Conversation Model</title>
+        <meta property="og:title" content="A Face-to-Face Neural Conversation Model" />
+  </head>
+
+  <body>
+    <br>
+    <center>
+    <span style="font-size:42px">A Face-to-Face Neural Conversation Model</span>
+    </center>
+
+    <br>
+      <table align=center width=700px>
+       <tr>
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="http://chuhang.github.io/">Hang Chu</a> <sup>1,2</sup></span>
+        </center>
+        </td>
+
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="">Daiqing Li</a> <sup>1</sup></span>
+        </center>
+        </td>
+
+        <td align=center width=100px>
+            <center>
+            <span style="font-size:20px"><a href="http://www.cs.toronto.edu/~fidler/">Sanja Fidler</a><sup>1,2</sup></span>
+            </center>
+        </td>
+     </tr>
+    </table>
+
+    <br>
+    <table align=center width=700px>
+       <tr>
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><sup>1</sup>University of Toronto</span>
+        </center>
+        </td>
+        <td align=center width=100px>
+            <center>
+            <span style="font-size:20px"><sup>2</sup>Vector Institute</span>
+            </center>
+        </td>
+
+     </tr>
+    </table>
+    
+    <table align=center width=700px>
+       <tr>
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px">CVPR, 2018</span>
+        </center>
+        </td>
+     </tr>
+    </table>
+
+            <br>
+            <table align=center width=1120px>
+                <tr>
+                    <td width=640px>
+                        <center>
+                            <iframe src="https://player.vimeo.com/video/248025147" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>                        
+                        </center>
+                    </td>
+					<td width=480px>
+                        <center>
+                            <iframe src="https://player.vimeo.com/video/263615590" width="480" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>                        
+                        </center>
+                    </td>
+                </tr>
+            </table>
+            <table align=center width=900px></table>
+                <tr>
+                    <td width=600px>
+                    <br>  
+                    <center>
+                          <span style="font-size:14px"><i>We propose to model natural language and facial gesture language together.</i>
+                    </center>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=600px>
+                        <br>
+                        <p align="justify" style="font-size: 20px">
+                            Neural networks have recently become good at engaging in dialog. However, current approaches are based solely on verbal text, lacking the richness of a real face-to-face conversation. We propose a neural conversation model that aims to read and generate facial gestures alongside with text. This allows our model to adapt its response based on the “mood” of the conversation. In particular, we introduce an RNN encoder-decoder that exploits the movement of facial muscles, as well as the verbal conversation. The decoder consists of two layers, where the lower layer aims at generating the verbal response and coarse facial expressions, while the second layer fills in the subtle gestures, making the generated output more smooth and natural. We train our neural network by having it “watch” 250 movies. We showcase our joint face-text model in generating more natural conversations through automatic metrics and a human study. We demonstrate an example application with a face-to-face chatting avatar.
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+          <br>
+        <hr>
+		<table align=center width=1100>
+		  <tr>
+		   <td>
+			<center><h1>Input: Face Video</h1>
+			<table><tr>
+			<td id="changediv">
+			<button onclick="changeexample()">Change Another Example</button><br>(now: face2hank_0)
+			</td>
+			</tr></table>
+			</center>
+			<center>
+			<table border="1">
+			<col width="320">
+			<col width="200"><tr>	
+				<td id="videodiv1">
+					<video id="video1" width="320" height="200"></video>
+				</td>
+				<td id="videodiv2">
+					<div class="cropper"><video id="video2" width="500"></video></div>
+				</td>
+			</tr><tr>
+				<td id="button1">
+					<button onclick="showinput()">play input video</button>
+				</td>
+				<td id="button2">
+					<button onclick="showhank()">play bot response</button>
+				</td>
+			</tr></table>
+		   </td>
+		   <td>
+		   <center><h1>Input: Text</h1>
+			<table><tr>
+			<td id="changediv2">
+			<button onclick="changeexample2()">Change Another Example</button><br>(now: text2hank_0)
+			</td>
+			</tr></table>
+			</center>
+			<center>
+			<table border="1">
+			<col width="320">
+			<col width="200"><tr>	
+				<td id="textdiv1">
+					<video id="video1" width="320" height="200"></video>
+				</td>
+				<td id="videodiv3">
+					<div class="cropper"><video id="video3" width="500"></video></div>
+				</td>
+			</tr><tr>
+				<td id="button3">
+				</td>
+				<td id="button4">
+					<button onclick="showhank2()">play bot response</button>
+				</td>
+			</tr></table>
+		   </td>
+		  </tr>
+		 </table>
+		<br>
+		<hr style="height:2px;">
+		<center><h1>Live chat with Hank through your webcam</h1>
+		<a href="https://www.sheep-electric.net/">Live Demo Link</a></center>
+		<br>
+		<hr style="height:2px;">
+		
+		<table align=center width=1100>
+		  <tr>
+		   <td>
+		   <table align=center width=550>
+             <center><h1>Paper</h1></center>
+                <tr>
+                  <td><a href=""><img style="height:180px; border: solid; border-radius:30px;" src="./face2face/media/paper.png"/></a></td>
+                  <td><span style="font-size:18px">Hang Chu, Daiqing Li, Sanja Fidler<br><br>
+                          A Face-to-Face Neural Conversation Model<br><br>
+                  CVPR 2018 &nbsp; <a href="./face2face/media/face2face_paper.pdf">[pdf]</a> &nbsp; <br>
+                    </td>
+              </tr>
+            </table>
+		   </td>
+		   <td>
+		   <center><h1>Model</h1></center>
+            <table align=center width=550px>
+                <tr>
+                        <center>
+                          <img class="round" style="width:550px" src="./face2face/media/framework.png"/></a>
+                        </center>
+              </tr>
+          </table>
+		   </td>
+		  </tr>
+		  <tr>
+		   <td>
+		   <center><h1>Results</h1></center>
+            <table align=center width=550px>
+                <tr>
+                        <center>
+                          <img class="round" style="width:550px" src="./face2face/media/result.png"/></a>
+                        </center>
+              </tr>
+          </table>
+		   </td>
+		   <td>
+		   <center><h1>Dataset</h1>
+		   <br>
+		   <span style="font-size:18px">MovieChat: 48K movie conversations with faces &nbsp; <a href="https://www.dropbox.com/s/4dlk8py32r38mjl/MovieChat.zip?dl=0">[download]</a></center>
+            <table align=center width=550px>
+                <tr>
+                        <center>
+                          <img class="round" style="width:340px" src="./face2face/media/dataset.png"/></a>
+                        </center>
+              </tr>
+          </table>
+		   </td>
+		  <tr>
+		</table>
+          <hr>
+          <table style="font-size:14px" align=center width=700px>
+          <tr>
+          <td width=350px>©  All rights reserved.
+          </td>
+		  <td width=350px>Webpage template borrowed from <a href="https://richzhang.github.io/colorization/">Richard Zhang</a>.
+		  </td></tr>
+          </table>
+<script type="text/javascript" src="./face2face/data.json"></script>
+<script>
+list1=['169-final.mp4','193-final.mp4','199-final.mp4','226-final.mp4','242-final.mp4','347-final.mp4','454-final.mp4','472-final.mp4','481-final.mp4','485-final.mp4','492-final.mp4','496-final.mp4'];
+list2=['result_0169','result_0193','result_0199','result_0226','result_0242','result_0347','result_0454','result_0472','result_0481','result_0485','result_0492','result_0496'];
+var jsondata = JSON.parse(data);
+var idnow=0;
+function showinput()
+{
+document.getElementById('video1').play();
+}
+function showhank()
+{
+document.getElementById('video2').play();
+}
+function changeexample()
+{
+var max=11;
+var min=0;
+idnow=Math.floor((Math.random()*((max+1)-min))+min);
+document.getElementById('changediv').innerHTML='<button onclick="changeexample()">Change Another Sample</button><br>(now: face2hank_'+idnow.toString()+')';
+srcstr='./face2face/media/';
+srcstr=srcstr+'video_clips_mp4/';
+srcstr=srcstr+list1[idnow];
+document.getElementById('videodiv1').innerHTML='<video id="video1" width="320" height="200"><source src="'+srcstr+'" type="video/mp4"></video>';
+srcstr='./face2face/media/';
+srcstr=srcstr+'video_gan_mp4/';
+srcstr=srcstr+list2[idnow];
+srcstr=srcstr+'.mp4';
+document.getElementById('videodiv2').innerHTML='<div class="cropper"><video id="video2" width="500"><source src="'+srcstr+'" type="video/mp4"></video></div>';
+}
+changeexample();
+
+var idnow2=0;
+function showhank2()
+{
+document.getElementById('video3').play();
+}
+function changeexample2()
+{
+var max=64;
+var min=0;
+idnow2=Math.floor((Math.random()*((max+1)-min))+min);
+document.getElementById('changediv2').innerHTML='<button onclick="changeexample2()">Change Another Sample</button><br>(now: text2hank_'+idnow2.toString()+')';
+document.getElementById('textdiv1').innerHTML='<p style="display:inline-block;width:320px;height=200px;"><font size="5">'+jsondata[idnow2].query+'</font></p>';
+srcstr='./face2face/media/';
+srcstr=srcstr+'video_gan2_mp4/';
+srcstr=srcstr+'vid'+idnow2.toString()+'_2.mp4';
+document.getElementById('videodiv3').innerHTML='<div class="cropper"><video id="video3" width="500"><source src="'+srcstr+'" type="video/mp4"></video></div>';
+}
+changeexample2();
+
+list5=["Put that on your Christmas wish list.","The Christmas tree could be seen from the back of the house.","I find it hard to realize that Christmas is almost here.","The shopping trip was exciting because it was so close to Christmas.","I hope your Christmas day will be a very happy one.","Yesterday I sent you a little Christmas box.","Family makes Christmas special, not location.","I am going to have a Christmas tree in the parlor.","You know those Christmas lights that are shaped like red chili peppers?","On Christmas morning we lounge around in our night clothes while we open presents.","What will you do for Christmas this year?","Do you have a Christmas gift for me?","Do you like Christmas?","What do you love most about Christmas?"];
+var idnow3=0;
+function showhank3()
+{
+document.getElementById('video4').play();
+}
+function changeexample3()
+{
+var max=13;
+var min=0;
+idnow3=Math.floor((Math.random()*((max+1)-min))+min);
+document.getElementById('changediv3').innerHTML='<button onclick="changeexample3()">Change Another Sample</button><br>(now: christmas2hank'+idnow3.toString()+')';
+document.getElementById('textdiv2').innerHTML='<p style="display:inline-block;width:640px;height=400px;"><font size="5">'+list5[idnow3]+'</font></p>';
+srcstr='./face2face/media/';
+srcstr=srcstr+'video_gan3_mp4/';
+srcstr=srcstr+'result_'+idnow3.toString()+'.mp4';
+document.getElementById('videodiv4').innerHTML='<div class="cropper"><video id="video4" width="500"><source src="'+srcstr+'" type="video/mp4"></video></div>';
+}
+changeexample3();
+
+list3=['result_0000_2.82_0.00_14_pers','result_0005_0.10_0.00_15_pers','result_0019_0.26_0.00_02_pers','result_0021_4.97_0.00_08_pers','result_0040_3.40_17.58_15_pers','result_0044_4.07_0.00_02_pers','result_0045_5.00_0.00_00_pers','result_0049_0.10_0.00_15_pers','result_0057_4.64_17.58_11_pers','result_0071_5.00_0.00_02_pers','result_0079_4.93_0.00_12_pers','result_0085_4.17_0.00_16_pers','result_0087_5.00_0.00_10_pers','result_0095_3.80_0.00_00_pers','result_0099_4.97_0.00_08_pers','result_0101_4.08_0.00_00_pers','result_0110_1.94_0.00_02_pers','result_0121_4.96_17.58_14_pers','result_0148_5.00_0.00_09_pers','result_0192_3.13_0.00_11_pers','result_0200_3.65_0.00_09_pers','result_0236_4.77_0.00_15_pers','result_0248_5.00_0.00_16_pers','result_0251_5.00_0.00_16_pers','result_0260_2.82_0.00_14_pers','result_0280_5.00_0.00_09_pers','result_0286_3.34_0.00_13_pers','result_0292_3.85_35.36_06_pers','result_0301_0.26_0.00_02_pers','result_0320_0.26_0.21_02_pers','result_0332_4.07_0.00_15_pers','result_0337_5.00_0.00_10_pers','result_0342_4.88_0.00_05_pers','result_0353_3.43_0.00_01_pers','result_0356_2.29_2.26_05_pers','result_0361_3.85_0.00_01_pers','result_0372_3.92_3.68_07_pers','result_0375_4.35_0.00_02_pers','result_0398_2.29_0.00_05_pers','result_0399_0.26_0.00_02_pers','result_0407_5.00_0.00_01_pers','result_0418_2.29_0.00_05_pers','result_0426_2.82_2.26_14_pers','result_0436_3.80_0.00_15_pers','result_0438_5.00_0.21_04_pers','result_0441_3.50_0.00_07_pers','result_0443_5.00_0.00_11_pers','result_0446_5.00_7.53_11_pers','result_0454_5.00_0.00_14_pers','result_0465_2.78_0.00_07_pers','result_0471_3.92_0.00_07_pers','result_0472_3.50_3.68_07_pers','result_0479_5.00_0.00_02_pers','result_0482_4.07_17.58_02_pers'];
+list4=["I don't sleep with my students, Mr. Goober.", 'OK, can we finish now?', 'What are you talking about?', 'Oh, great. Thank you. Hi.', "It wasn't me who dumped you and split for Paris, so don't take it out on me.", 'What happened to the girls?', 'You remember.', "Let's find out.", 'Turn to the left.', 'Getting to know the part of me.', "Thanks. They're actually very informative.", 'Only when probate is granted, and the deed of entitlement.', 'I knew that if I ever broke my promise,', 'It was like four or five mil, something like that, right?', 'Erik, what a pleasant surprise.', "So, it don't mean nothing to me for you to show up tomorrow morning.", "My tit's gonna rot off.", "I wasn't asking for the time, I was just saying, there was a time.", 'I pissed her off.', 'You are convicted felons.', "She's the third and latest victim.", "There's just one thing.", 'See you inside.', 'All right.', 'Feel anything?', 'What? Look.', 'Will you come, old sport?', 'Rule number one:', 'What do you want to do?', 'Bye.', 'See you in a month.', "If we arrive at the conclusion that you're acting in bad faith,", 'No blasphemy.', 'You can count on us.', 'Gesundheit.', 'Until god shall separate you by death?', 'We love you so much.', "What's this?", "Are you sure nothing's wrong?", "I've known it all along.", 'Thank you very much.', 'Does Kyle know something that I should know? No.', 'Right now I am just freaking out.', 'Wait a minute.', 'Do you know any jokes?', 'My poor, innocent brother, Arthur.', "But you want a relationship, then here's how you get one:", 'Nope. Mailroom.', 'Sure. Yeah.', "I'm your boss. And there's gonna be some changes around here.", "The reason I'm in town, in case you're wondering.", "That's a great picture. Conor, do you wanna?", "I don't know why I did that.", 'Good luck. Good luck. Good luck.'];
+var idnow4=0;
+function showhank4()
+{
+document.getElementById('video5').play();
+}
+function personalitychange()
+{
+srcstr='./face2face/media/';
+srcstr=srcstr+'video_detail_mp4/';
+srcstr=srcstr+list3[idnow4];
+var a=document.getElementById("hankdrop");
+if (a.options[a.selectedIndex].value==0)
+{
+	srcstr=srcstr+'11111.mp4';
+}
+if (a.options[a.selectedIndex].value==1)
+{
+	srcstr=srcstr+'21111.mp4';
+}
+if (a.options[a.selectedIndex].value==2)
+{
+	srcstr=srcstr+'12111.mp4';
+}
+if (a.options[a.selectedIndex].value==3)
+{
+	srcstr=srcstr+'11211.mp4';
+}
+if (a.options[a.selectedIndex].value==4)
+{
+	srcstr=srcstr+'11121.mp4';
+}
+if (a.options[a.selectedIndex].value==5)
+{
+	srcstr=srcstr+'11112.mp4';
+}
+document.getElementById('videodiv5').innerHTML='<div class="cropper"><video id="video5" width="1000"><source src="'+srcstr+'" type="video/mp4"></video></div>';
+}
+function changeexample4()
+{
+var max=53;
+var min=0;
+idnow4=Math.floor((Math.random()*((max+1)-min))+min);
+document.getElementById('changediv4').innerHTML='<button onclick="changeexample4()">Change Another Sample</button><br>(now: personalityhank'+idnow4.toString()+')';
+document.getElementById('textdiv3').innerHTML='<p style="display:inline-block;width:640px;height=400px;"><font size="5">'+list4[idnow4]+'</font></p>';
+srcstr='./face2face/media/';
+srcstr=srcstr+'video_detail_mp4/';
+srcstr=srcstr+list3[idnow4];
+var a=document.getElementById("hankdrop");
+if (a.options[a.selectedIndex].value==0)
+{
+	srcstr=srcstr+'11111.mp4';
+}
+if (a.options[a.selectedIndex].value==1)
+{
+	srcstr=srcstr+'21111.mp4';
+}
+if (a.options[a.selectedIndex].value==2)
+{
+	srcstr=srcstr+'12111.mp4';
+}
+if (a.options[a.selectedIndex].value==3)
+{
+	srcstr=srcstr+'11211.mp4';
+}
+if (a.options[a.selectedIndex].value==4)
+{
+	srcstr=srcstr+'11121.mp4';
+}
+if (a.options[a.selectedIndex].value==5)
+{
+	srcstr=srcstr+'11112.mp4';
+}
+document.getElementById('videodiv5').innerHTML='<div class="cropper"><video id="video5" width="1000"><source src="'+srcstr+'" type="video/mp4"></video></div>';
+}
+changeexample4();
+</script>
+</body>
+</html>

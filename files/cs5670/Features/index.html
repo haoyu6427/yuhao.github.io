@@ -1,0 +1,501 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>main</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<p><em>Yingchuan Hu (yh537), Hang Chu (hc772)</em><br />
+<em>CS 4670/5670 Introduction to Computer Vision</em><br />
+<em>Oct. 1st, 2013</em></p>
+<h1>Project 2: Feature Detection and Matching</h1>
+<h2>I. Our Design</h2>
+<h3>1. Feature Detection</h3>
+<ol>
+<li>
+<p><strong>Compute Harris Features</strong><br />
+We generally followed the instructions from the slides and the instructions. We first applied two filters on the entire image to get the derivative image of x axis and y axis, and we computed the harris matrix of each pixel in its neighborhood using a gaussian mask and the derivative images (treat the value as zero when the sliding window is out of image boundary). Then we computed the harris score using the matrix. Finally we take the eigenvector corresponding to the first eigenvalue as the orientation of the feature, transformed to radian by <code>atan()</code> and <code>atan()+pi</code>.  
+</p>
+</li>
+<li>
+<p><strong>Adaptive Nonmaximum Suppression</strong><br />
+As is described in the MOPS paper, we computed the minimum suppression radius for every local maximum in the harris image using <code>Eq.(10)</code>, and we only took the N points with largest suppression radius as the feature point. Note that if we have two points share the same value in one square, no feature point will be extracted from that square window.</p>
+</li>
+</ol>
+<h3>2. Feature Description</h3>
+<ol>
+<li>
+<p><strong>Simple Window Descriptor</strong> <br />
+For the window descriptor, just as the instruction on the website, we used a 5x5 window as the feature descriptor which takes the raw data of the grayscale image. In fact, it would be illumination invariant if it is normalized by substracting the mean and dividing by the standard deviation.</p>
+</li>
+<li>
+<p><strong>MOPS Descriptor</strong><br />
+We followed the MOPS paper and instructions on the website. By applying the rotation transform and the Gaussian kernel before down-sampling and calling WarpGlobal to do the mapping, we transformed the 40x40 window of the grayscale image to a 8x8 feature with a horizontal dominant direction. After that, we did normalization for the values by substracting the mean and dividing by the standard deviation.</p>
+</li>
+<li>
+<p><strong>Custom Descriptor</strong><br />
+<img src="ConcentricCircleDescriptor.png" alt="Concentric Circle Descriptor" /><br />
+Inspired by the simple window descriptor and MOPS descriptor, we thought of constructing a circle-shape descriptor. However, it's redundant to choose all the points inside one circle and it's not enough to choose points on circle only. In this case, we came up with the concentric circles form of the descriptor. Specifically, we tested and decided to choose three concentric circles with radius 6, 12, 18 correspondingly. And we chose the first point to be the one at the dominant direction and then looped counter-clockwise, which makes the feature rotation invariant. After testing, we found that it's better to choose a point every 20 degrees. The sample pixel was rounded to the nearest integer neighbor. So together, for each feature, we have <code>360 / 20 * 3 = 54</code> values to describe it.<br />
+To note that the performance of this new descriptor is not as good but close to MOPS.</p>
+</li>
+<li>
+<p><strong>Scale Invariance</strong> <br />
+In order to make the feature detector scale invariant, we applied the pyramid structure. Instead of using the structure provided in the ImageLib, we did that by ourselves. By scaling the original image to 1/2, 1/3, 1/4 and 1/5, we computed the features in different scales. And different from the method which is given in class by choosing the maximum value of the features in a square, I keep the features from all scales.<em>(We noticed that the number of features get less and less quickly as the scaling variant alpha decreases to near 0, especially after we applied adaptive nonmaximum suppression.)</em> After some analyses, we concluded that in some situations this method was better than choosing the maximum and concluded that merging the features from all scales was reasonable. Also, that won't bring about too much computation cost.  
+</p>
+</li>
+</ol>
+<h3>3. Feature Matching</h3>
+<ol>
+<li>
+<p><strong>SSD Matching</strong><br />
+This was already done by the framework.</p>
+</li>
+<li>
+<p><strong>Ratio Matching</strong><br />
+To implement the ratio matching, we took the SSD matching as a reference. As we need to find the best and the second best, new variables were added to record the second best value and index. Assume <code>dBest1</code> and <code>idBest1</code> are used for the best match while <code>dBest2</code> and <code>idBest2</code> for the second best. Our algorithm can be described as follows:</p>
+<p><code>if (d &lt; dBest1) 
+    update dBest2, dBest1;
+ else if (d &gt;= dBest1 &amp;&amp; d &lt; dBest2)
+    update dBest2</code><br />
+And we get the ratio distance after looping through features.</p>
+</li>
+<li>
+<p><strong>Improved Ratio Matching</strong><br />
+We noticed that the ratio test took advantage of the second best to make full use of the majority of information to distinguish between ambiguous matches. To note that there may be more than two ambiguous matches in one image, though the probability is low. In this case, we can improve the original ratio test by giving <code>DISTANCE = p * FIRST_BEST / SECOND_BEST + (1 - p) * SECOND_BEST / THIRD_BEST</code>, which absorbs more information and has better statistic distributions. Notice that <code>p &gt; 1 - p</code>, and we choose <code>p = 0.8</code> here.<br />
+To note that this new matching method has an average 0.014 increase in AUC for leuven, bikes and wall test sequences.</p>
+</li>
+<li><strong>Kd-tree Improved Ratio Matching</strong><br />
+We used Approximate Nearest Neighbor <em>(<a href="http://www.cs.umd.edu/~mount/ANN/">ANN</a>: A Library for Approximate Nearest Neighbor Searching from <strong>David M. Mount</strong> and <strong>Sunil Arya</strong>)</em> to speed up the feature matching process. However, as ANN is an approximate approach it may not always return the actual best matching result, to deal with this problem we first let ANN return the 10 nearest neighbors and conduct brute search in these 10 matches for the 3 (or 2,1 depending on the matching method) nearest neighbors. Experiment shows this approach speeds the matching procedure by 2-3 times, while still produces satisfactory matching accuracy.</li>
+</ol>
+<h2>II. Performance</h2>
+<h3>1. ROC</h3>
+<p>The ROC curves are displayed below (<strong>graf</strong> and <strong>yosemite</strong>).  </p>
+<img src="graf.plot.roc.png" alt="Drawing" style="width: 450px;"/>
+<img src="yosemite.plot.roc.png" alt="Drawing" style="width: 450px;"/>
+<p>And for <strong>all ROC curves</strong> including custom descriptor, improved ratio match and kd-tree improved ratio match, we plotted the ROC curves as follows:  </p>
+<img src="graf.plot.roc.all.png" alt="Drawing" style="width: 450px;"/>
+<img src="yosemite.plot.roc.all.png" alt="Drawing" style="width: 450px;"/>
+<h3>2. Image of Harris Operator</h3>
+<img src="graf.harris.jpg" alt="Drawing" style="width: 450px;"/>
+<img src="yosemite.harris.jpg" alt="Drawing" style="width: 450px;"/>
+<h3>3. Average AUC</h3>
+<p>leuven:  </p>
+<table>
+    <tr>
+        <td></td>
+		<td>SSD</td>
+		<td>ratio test</td>
+		<td>improved ratio test</td>
+		<td>kd-tree improved ratio test</td>
+    </tr>
+	<tr>
+		<td>Simple Window Descriptor</td>
+		<td>0.208008</td>
+		<td>0.500890</td>
+		<td>0.511718</td>
+		<td>0.439394</td>
+	</tr>
+	<tr>
+		<td>MOPS Descriptor</td>
+		<td>0.632387</td>
+		<td>0.669069</td>
+		<td>0.681089</td>
+		<td>0.617840</td>
+	</tr>
+	<tr>
+		<td>My Own Descriptor</td>
+		<td>0.632555</td>
+		<td>0.655203</td>
+		<td>0.667872</td>
+		<td>0.625959</td>
+	</tr>
+</table>
+<p>bikes:  </p>
+<table>
+    <tr>
+        <td></td>
+		<td>SSD</td>
+		<td>ratio test</td>
+		<td>improved ratio test</td>
+		<td>kd-tree improved ratio test</td>
+    </tr>
+	<tr>
+		<td>Simple Window Descriptor</td>
+		<td>0.429870</td>
+		<td>0.523828</td>
+		<td>0.527999</td>
+		<td>0.564001</td>
+	</tr>
+	<tr>
+		<td>MOPS Descriptor</td>
+		<td>0.677916</td>
+		<td>0.700415</td>
+		<td>0.721920</td>
+		<td>0.612995</td>
+	</tr>
+	<tr>
+		<td>My Own Descriptor</td>
+		<td>0.622444</td>
+		<td>0.670107</td>
+		<td>0.687494</td>
+		<td>0.644212</td>
+	</tr>
+</table>
+<p>wall:  </p>
+<table>
+    <tr>
+        <td></td>
+		<td>SSD</td>
+		<td>ratio test</td>
+		<td>improved ratio test</td>
+		<td>kd-tree improved ratio test</td>
+    </tr>
+	<tr>
+		<td>Simple Window Descriptor</td>
+		<td>0.307211</td>
+		<td>0.547159</td>
+		<td>0.552138</td>
+		<td>0.531165</td>
+	</tr>
+	<tr>
+		<td>MOPS Descriptor</td>
+		<td>0.574394</td>
+		<td>0.608491</td>
+		<td>0.615165</td>
+		<td>0.539280</td>
+	</tr>
+	<tr>
+		<td>My Own Descriptor</td>
+		<td>0.598584</td>
+		<td>0.588737</td>
+		<td>0.596019</td>
+		<td>0.563881</td>
+	</tr>
+</table>
+<h2>III. Strengths and Weeknesses</h2>
+<ol>
+<li>We've implemented all the extra credits, which add to performance and efficiency.  </li>
+<li>Our self-designed matching method outperforms the ratio test.</li>
+<li>Our implementation is invariant to translation, which is the property of Harris features.  </li>
+<li>It is illumination invariant, since the descriptors are subtracted by the mean and then divided by the standard deviation.  </li>
+<li>It is rotation invariant, since values in the feature descriptors begin with the dominant orientation and MOPS transforms to the same dominant direction.</li>
+<li>It is scale invariant, since we compute features for six scales of the original image.  </li>
+<li>The radius of the concentric circle descriptor may affect image differently. Generally, small radius is better for high frequency features, and larger radius is better for low frequency features. Optimizations can be done.</li>
+<li>The kd-tree method is just an approximate algorithm. Better performance is expected using better speeding up algorithms.</li>
+</ol>
+<h2>IV. Our Images and Performance</h2>
+<img src="book1.png" alt="Drawing" style="width: 450px;"/>
+<img src="book2.png" alt="Drawing" style="width: 450px;"/>
+<h2>V. Summary of Our Design (Extra Credits)</h2>
+<p>In spite of the basic requirements, we have implemented all the extra credits as follows:<br />
+1. Designed and implemented our own feature descriptor <strong>(By Yingchuan Hu)</strong><br />
+// See Feature Description --&gt; 2<br />
+2. Implemented adaptive non-maximum suppression <strong>(By Hang Chu)</strong><br />
+// See Feature Detection  --&gt; 2<br />
+3. Made our feature detector scale invariant <strong>(By Yingchuan Hu)</strong><br />
+// See Feature Description  --&gt; 4<br />
+4. Implemented a method that outperforms the ratio test <strong>(By Yingchuan Hu)</strong><br />
+// See Feature Matching --&gt; 3<br />
+5. Used a fast search algorithm to speed up the matching process <strong>(By Hang Chu)</strong><br />
+// See Feature Matching --&gt; 4  </p>
+<h2>VI. FAQ</h2>
+<p><strong>Q1: How to configure our project?</strong><br />
+<strong>A1:</strong> As we applied kd-tree for matching based on the ANN:A Library for Approximate Nearest Neighbor Searching from David M. Mount and Sunil Arya (http://www.cs.umd.edu/~mount/ANN/) , you need to merge the code/lib and code/include with the original documents such that you have the required *.dll, *.h and *.lib files. Also, right click on Project Features in the Solution Explorer-&gt;Configurations-&gt;Linker-&gt;Input-&gt;Additional Dependencies, add ANN.lib and apply so that the linker will find the lib file.</p>
+<p><strong>Q2: How to run our program?</strong><br />
+<strong>A2:</strong> Be sure that you have copy ANN.dll under the path of Features.exe. We have modified FeaturesMain.cpp to give you guidance on our feature types, descriptor types and matching types, which are also listed here as follows.  </p>
+<blockquote>
+<p>Featuretype (1: Dummy  2: Harris)<br />
+Descriptortype (1: Window  2: MOPS  3: Custom)<br />
+Matchtype (1: SSD  2: Ratio  3: Improved Ratio  4: Kd-tree Improved Ratio)  
+</p>
+</blockquote>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

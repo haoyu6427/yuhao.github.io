@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="Description" content="Basic Gray">
+    <meta name="author" content="CoffeeCup Software, Inc.">
+    <meta name="Copyright" content="Copyright (c) 2010 CoffeeCup, all rights reserved.">
+	<title>Understand "Anchor-based Mapping" in 5min</title>
+    <link rel="stylesheet" href="stylesheets/default.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="javascripts/behavior.js"></script>
+    <!--[if IE]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+    <section id="intro3">
+    	<h2>Consistent Ground-Plane Mapping: A Case Study Utilizing Low-Cost Sensor Measurements and a Satellite Image</h2>
+        <h3>Goal</h3>
+		<p>Create a high resolution roadway image for autonomous driving, only using low-cost conventional sensors. The created image should be consistent with the a prior satellite image.<p>
+		
+		<h3>Challenge</h3>
+		<p>Low-cost sensors cannot localize accurately, must resort to matching input and satellite images to achieve consistency, but matching
+		does not always work.<br>
+		<b>Example:</b> For the first and second images, I have something to match with. What about the third one? It could (and actually 
+		does) show strong correlation at random wrong location.
+		<center><img src="ui5m/AM/img1.png" alt="roadway img1" style="width:150px;height:150px">
+		<img src="ui5m/AM/img2.png" alt="roadway img2" style="width:150px;height:150px">
+		<img src="ui5m/AM/img3.png" alt="roadway img3" style="width:150px;height:150px"></center>
+		</p>
+		<h3>Method</h3>
+		<p><b>Step 1:</b> Classify anchor frames: frames that have highly identifiable structured textures.<br>
+		<b>Example:</b> In the above figure, first and second are anchor frames, third is not.<br>
+		<b>Step 2:</b> Adjacent anchor frames form an anchor, make adjustment in anchor units.<br>
+		<b>Example:</b> This not only avoids "bad" images, but also produces smooth adjustments.<br>
+		<center><img src="ui5m/AM/img4.png" alt="anchor-wise method" style="width:441px;height:150px"></center>
+		Finally we got this:
+		<center><!-- This version of the embed code is no longer supported. Learn more: https://vimeo.com/s/tnm --> <object width="500" height="281"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=108090727&amp;force_embed=1&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=ff9933&amp;fullscreen=1&amp;autoplay=0&amp;loop=1" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=108090727&amp;force_embed=1&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=ff9933&amp;fullscreen=1&amp;autoplay=0&amp;loop=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="500" height="281"></embed></object> <p><a href="http://vimeo.com/108090727">icra15_demo_HChu_AVu</a> from <a href="http://vimeo.com/user33036670">Hang Chu</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+		</center>
+		</p>
+				
+		<h3>References</h3>
+		[1] Hang Chu, and Anh Vu, Consistent Ground-Plane Mapping: A Case Study Utilizing Low-Cost Sensor Measurements and a Satellite Image, submitted to <i>IEEE International Conference on Robotics and Automation (ICRA)</i>, 2015. [<a href="files/publications/ICRA_15.pdf">pdf</a>]<br>
+    </section>
+</body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59284902-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>

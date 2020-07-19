@@ -1,0 +1,15 @@
+<krpano version="1.16" ispartialpano="true">
+	
+	<include url="skin/defaultskin.xml" />
+	
+	<view hlookat="0" vlookat="0" maxpixelzoom="1.0" fovmax="150" limitview="auto" />
+
+	<preview url="pano_custom.tiles/preview.jpg" />
+
+	<image type="CYLINDER" hfov="1.00" vfov="0.103248" voffset="0.00" multires="true" tilesize="4000" progressive="true">
+		<level tiledimagewidth="4126" tiledimageheight="426">
+			<cylinder url="pano_custom.tiles/pano_%v%h.jpg" />
+		</level>
+	</image>
+
+</krpano>
