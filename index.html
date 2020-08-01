@@ -13,6 +13,10 @@
     font-size : 30px;
 		color:black;
   }
+	#bb {
+    font-size : 15px;
+		color:black;
+  }
 </style></head>
 
 
@@ -24,7 +28,7 @@
 
 <br>
 
-	<div style="position: relative; left: 30px ; right: 30px">
+	<div style="position: relative; left: 30px ; right: -30px">
 		<h2>Personal Info:</h2>
 	  <table cellpadding="5">
 
@@ -43,7 +47,7 @@
  	   </tr>
 		 <tr>
  	      <td><b>Website:</b></td>
- 				<td><a href="url"><b>https://www.linkedin.com/in/jingyu-deng-3241511a1/</b></a></td>
+ 				<td><a href="url" id="bb"><b>https://www.linkedin.com/in/jingyu-deng-3241511a1/</b></a></td>
  	   </tr>
 		 <tr>
  	      <td><b>RA Period:</b></td>
@@ -67,9 +71,11 @@
 
 
 <h2>Research Project:</h2>
+</div>
 <a href="https://arxiv.org/pdf/2006.07826.pdf" id="aa" ><center>Few-shot Object Detection on Remote Sensing Images</a>
+<div style="position: relative; left: 30px ; right: -30px">
 <h3>Description</h3>
-<p>In this project, we deal with the problem of object
+<p style="text-align:justify; text-justify:inter-ideograph;">In this project, we deal with the problem of object
 detection on remote sensing images. Previous methods have developed numerous deep CNN-based methods for object detection on
 remote sensing images and the report remarkable achievements
 in detection performance and efficiency. However, current CNNbased methods mostly require a large number of annotated
