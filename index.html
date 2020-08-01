@@ -101,14 +101,14 @@ with only a few annotated samples our model can still achieve a
 satisfying detection performance on remote sensing images and
 the performance of our model is significantly better than the
 well-established baseline models.</p>
-<img src="/figures/JingyuDeng1.jpg" />
+<img src="./figures/JingyuDeng1.jpg" />
 <h3 align="left">Method</h3>
 <p style="text-align:justify; text-justify:inter-ideograph;">
 	We introduce a few-shot learning-based method for object
 	detection on remote sensing images where only a few annotated
 	samples are provided for the unseen object categories. As displayed in Figure.1, our method consists of three main components: a Meta Feature Extractor, a Reweighting Module, and a Bounding Box Prediction Module. The Feature Extractor network takes a query image as input and produces meta feature maps at three different scales. The Reweighting Module takes as input N support images with labels, one for each class, and outputs three groups of N reweighting vectors. These reweighting vectors are used to recalibrate the meta-feature maps of the same scale through a channel-wise multiplication. The reweighted feature maps are then fed into three independent bounding box detection modules to predict the objectness scores (o), the
 	bounding box locations and sizes (x, y, w, h) and class scores (c) at three different scales. </p>
-<img src="/figures/JingyuDeng2.jpg" />
+<img src="./figures/JingyuDeng2.jpg" />
 <h3 align="left">Results</h3>
 <p style="text-align:justify; text-justify:inter-ideograph;">
 	In this section, we evaluate the performance of our model
@@ -117,7 +117,7 @@ well-established baseline models.</p>
 	proposed FSODM model achieves significantly better performance than Few-shot
 	object detection via feature reweighting and YOLOv3. More specifically, compared
 	to another few-shot object detector Few-shot
-	object detection via feature reweighting[19], our method obtains a
+	object detection via feature reweighting, our method obtains a
 	mean mAP 166.6% higher in the 3-shot setting, 120.8% higher
 	in 5-shot setting, and 62.5% higher in the 10-shot setting.
 	Conventional none few-shot-based method YOLOv3 obtains a
@@ -135,7 +135,7 @@ well-established baseline models.</p>
 	detection results on the novel classes of DIOR dataset using 20-shot setting. Red, yellow and blue boxes indicate true positive, false positive and false negative detection respectively. Table 1 lists the few-shot object detection performance of
 	our FSODM method and the comparing methods on the novel
 	classes of NWPU VHR-10 dataset. </p>
-<img src="/figures/JingyuDeng3.jpg" />
+<img src="./figures/JingyuDeng3.jpg" />
 </div>
 <!-- <ul style="list-style: none;"><li> -->
 <script type="text/javascript" src="./Andrew Owens_files/footer.js"></script>
