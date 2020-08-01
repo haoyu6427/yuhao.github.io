@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title><center>Jingyu Deng</center></title>
+<title><center>Guanjie Cui</center></title>
 <style>
 	img.rounded-img {
 		border: 1px solid #eeeeee;
@@ -31,7 +31,7 @@
 
 <body>
 
-<h1><center>Jingyu Deng</h1>
+<h1><center>Guanjie Cui</h1>
 
 <br>
 
@@ -53,12 +53,8 @@
  				<td><b>Tandon School of Engineering, New York University</b></td>
  	   </tr>
 		 <tr>
- 	      <td><b>Website:</b></td>
- 				<td><a href="url" id="bb"><b>https://www.linkedin.com/in/jingyu-deng-3241511a1/</b></a></td>
- 	   </tr>
-		 <tr>
  	      <td><b>RA Period:</b></td>
- 				<td><b>From 2019-09 to Present</b></td>
+ 				<td><b>From 2017-10 to 2018-06</b></td>
  	   </tr>
 	</tbody></table>
 
@@ -69,73 +65,57 @@
     <tbody>
 	<tr>
       <td>
-        <b padding: 10px;>I'm a master student at New York University and a research assistant
-					in NYU Multimedia and Visual Computing Lab, advised by Professor Yi Fang.
-					I am broadly interested in 3D Computer Vision, Machine Learning and Remote Sensing. </b>
+        <b padding: 10px;>I was a research assistant in NYU Multimedia and Visual Computing Lab, advised by Professor Yi Fang. I am broadly interested in 3D Computer Vision and Deep Visual Learning.  </b>
 			</td>
 			</tr>
 </tbody></table>
 
 
 <h2>Research Project:</h2>
-<a href="https://arxiv.org/pdf/2006.07826.pdf" id="aa" ><center>Few-shot Object Detection on Remote Sensing Images</a>
+<a href="https://drive.google.com/file/d/1i5vtq_Vb79ImzTagbTkFDD_0B9WNtuob/view?usp=sharing" id="aa" ><center>End-To-End Hand Pose Estimation With Latent Domain Adaptation by Cycle GAN</a>
 <h3 align="left">1 Description</h3>
-<p style="text-align:justify; text-justify:inter-ideograph;">In this project, we deal with the problem of object
-detection on remote sensing images. Previous methods have developed numerous deep CNN-based methods for object detection on
-remote sensing images and the report remarkable achievements
-in detection performance and efficiency. However, current CNNbased methods mostly require a large number of annotated
-samples to train deep neural networks and tend to have limited
-generalization abilities for unseen object categories. In this
-project, we introduce a few-shot learning-based method for object
-detection on remote sensing images where only a few annotated
-samples are provided for the unseen object categories. More
-specifically, our model contains three main components: a meta
-feature extractor that learns to extract feature representations
-from input images, a reweighting module that learn to adaptively
-assign different weights for each feature representation from the
-support images, and a bounding box prediction module that
-carries out object detection on the reweighted feature maps.
-We build our few-shot object detection model upon YOLOv3
-architecture and develop a multi-scale object detection framework. Experiments on two benchmark datasets demonstrate that
-with only a few annotated samples our model can still achieve a
-satisfying detection performance on remote sensing images and
-the performance of our model is significantly better than the
-well-established baseline models.</p>
-<img src="./figures/JingyuDeng1.png" width="800"/>
+<p style="text-align:justify; text-justify:inter-ideograph;">
+	Most traditional hand pose estimations are semi-supervised learning methods that
+	require a large number of manually labeled training samples. To save those expensive and
+	time-consuming datasets, this paper proposes a novel method that replaces the real data
+	with synthetic data by using the transformation between their latent domains. After
+	finding a mapping ffrom the dataset to the low-latitude latent domain respectively for real and synthetic datasets respectively, a cycle generative adversarial network is used to
+	implement the transformation between the domains. In this process, the requirement of
+	a successful transformation necessitates the generator to complete the multitask learning,
+	thereby generating an indistinguishable potential domain while ensuring that the domain.
+</p>
+<img src="./figures/GuanjieCui1.png" width="800"/>
+<p>Figure 1: Final End-to-End Hand Pose Estimation Pipeline.</p>
 <h3 align="left">2 Method</h3>
 <p style="text-align:justify; text-justify:inter-ideograph;">
-	We introduce a few-shot learning-based method for object
-	detection on remote sensing images where only a few annotated
-	samples are provided for the unseen object categories. As displayed in Figure.1, our method consists of three main components: a Meta Feature Extractor, a Reweighting Module, and a Bounding Box Prediction Module. The Feature Extractor network takes a query image as input and produces meta feature maps at three different scales. The Reweighting Module takes as input N support images with labels, one for each class, and outputs three groups of N reweighting vectors. These reweighting vectors are used to recalibrate the meta-feature maps of the same scale through a channel-wise multiplication. The reweighted feature maps are then fed into three independent bounding box detection modules to predict the objectness scores (o), the
-	bounding box locations and sizes (x, y, w, h) and class scores (c) at three different scales. </p>
-<img src="./figures/JingyuDeng2.png" width="800"/>
+	In this
+project, we propose a new idea to solve the problem of limited and expensive humanlabeled datasets. The most prominent contribution is that the transformation is implemented on latent domain instead of images. Besides, the training of the generator
+responsible for domain transformation is multi-tasking in order to save storage space
+and achieve more fast convergence. This process is also beneficial in implementing an
+end-to-end training mode. This means that the training of hand pose estimation and
+domain transformation is carried out simultaneously. As displayed in Figure.1, there are two generators and discriminators.One is mainly
+responsible for converting synthetic data to real data, and the other one carries out the opposite
+function. Ds mainly distinguishes between synthetic images and translated images from
+real images; basically, it provides high scores within the true synthetic data, and vice
+verse. Even though we want to carry out latent domain transformation, it should be kept
+in mind during an end-to-end training that the primary purpose of a generator purpose
+is still to complete the translation of one image to another. A map for the features of a certain hidden layer from the generator is extracted as an output sample of the target
+latent domain, and this output is then fed into the following basic hand pose estimation
+network to predict a pose based on the input depth image.
+</p>
+<img src="./figures/GuanjieCui2.png" width="800"/>
+<p>Figure 2: NYU Hand Dataset.</p>
 <h3 align="left">3 Results</h3>
 <p style="text-align:justify; text-justify:inter-ideograph;">
-	In this section, we evaluate the performance of our model
-	for the few-shot object detection on two public benchmark
-	RSI datasets. As shown in Table 1, our
-	proposed FSODM model achieves significantly better performance than Few-shot
-	object detection via feature reweighting and YOLOv3. More specifically, compared
-	to another few-shot object detector Few-shot
-	object detection via feature reweighting, our method obtains a
-	mean mAP 166.6% higher in the 3-shot setting, 120.8% higher
-	in 5-shot setting, and 62.5% higher in the 10-shot setting.
-	Conventional none few-shot-based method YOLOv3 obtains a
-	lot worse performance than the two few-shot-based methods.
-	Even under the 20-shot setting, YOLOv3 only gets an mAP of
-	0.28, which is worse than our FSODM model under the 3-shot
-	setting. Moreover, as shown in Table II, with the increase in the
-	number of annotated samples in novel classes, the detection
-	performance of our FSODM model increases fast.
-	From Table 1 one can also see that both our FSODM
-	model and the comparing methods obtain better performance
-	on the ‘baseball diamond’ category. This is because baseball
-	diamonds have smaller size variations,
-	variations. Figure.2 shows selected examples of our few-shot detection results. Left: detection results on the novel classes of NWPU VHR dataset using 10-shot setting. Right:
-	detection results on the novel classes of DIOR dataset using 20-shot setting. Red, yellow and blue boxes indicate true positive, false positive and false negative detection respectively. Table 1 lists the few-shot object detection performance of
-	our FSODM method and the comparing methods on the novel
-	classes of NWPU VHR-10 dataset. </p>
-<img src="./figures/JingyuDeng3.png" width="800"/>
+	In this section, we compare the result of this research with several mainstream methods and then points out the pros and cons of the approach of this research. Figure.2 showcases
+experiment results as compared to the findings achieved using several state-of-the-art
+methods. It can be seen that when the fault tolerance rate is very low, our performance is still good enough, but as the fault tolerance rate rises, we can only beat one method.
+I attribute this result to the synthetic image we generated. If the synthetic dataset is
+very different from the original data in probability distribution, despite the depth map
+has implemented domain transform, the pose is never changed, which will limit our
+method’s performance. </p>
+<img src="./figures/GuanjieCui3.png" width="800"/>
+<p>Figure 3: Comparing on NYU Dataset.</p>
 </div>
 <!-- <ul style="list-style: none;"><li> -->
 <script type="text/javascript" src="./Andrew Owens_files/footer.js"></script>
