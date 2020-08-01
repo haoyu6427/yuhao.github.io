@@ -94,6 +94,13 @@ with only a few annotated samples our model can still achieve a
 satisfying detection performance on remote sensing images and
 the performance of our model is significantly better than the
 well-established baseline models.</p>
+
+<h3 align="left">Method</h3>
+<p style="text-align:justify; text-justify:inter-ideograph;">
+	We introduce a few-shot learning-based method for object
+	detection on remote sensing images where only a few annotated
+	samples are provided for the unseen object categories. As displayed in Figure.1, our method consists of three main components: a Meta Feature Extractor, a Reweighting Module, and a Bounding Box Prediction Module. The Feature Extractor network takes a query image as input and produces meta feature maps at three different scales. The Reweighting Module takes as input N support images with labels, one for each class, and outputs three groups of N reweighting vectors. These reweighting vectors are used to recalibrate the meta-feature maps of the same scale through a channel-wise multiplication. The reweighted feature maps are then fed into three independent bounding box detection modules to predict the objectness scores (o), the
+	bounding box locations and sizes (x, y, w, h) and class scores (c) at three different scales. </p>
 </div>
 <!-- <ul style="list-style: none;"><li> -->
 <script type="text/javascript" src="./Andrew Owens_files/footer.js"></script>
