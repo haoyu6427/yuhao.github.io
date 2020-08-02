@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title><center>Guanjie Cui</center></title>
+<title><center>Jianchun Chen</center></title>
 <style>
 	img.rounded-img {
 		border: 1px solid #eeeeee;
@@ -31,7 +31,7 @@
 
 <body>
 
-<h1><center>Guanjie Cui</h1>
+<h1><center>Jianchun Chen</h1>
 
 <br>
 
@@ -42,19 +42,19 @@
 	    <tbody>
 		<tr>
 	      <td><b>Status:</b></td>
-				<td><b>MS Student</b></td>
+				<td><b>Undergraduate Student</b></td>
 	   </tr>
 		 <tr>
  	      <td><b>Program:</b></td>
- 				<td><b>Computer  Science  and  Engineering</b></td>
+ 				<td><b>Computer Science</b></td>
  	   </tr>
 		 <tr>
  	      <td><b>School:</b></td>
- 				<td><b>Tandon School of Engineering, New York University</b></td>
+ 				<td><b>Xiamen University</b></td>
  	   </tr>
 		 <tr>
  	      <td><b>RA Period:</b></td>
- 				<td><b>From 2017-10 to 2018-06</b></td>
+ 				<td><b>From 2018-06 to 2019-06</b></td>
  	   </tr>
 	</tbody></table>
 
@@ -65,57 +65,63 @@
     <tbody>
 	<tr>
       <td>
-        <b padding: 10px;>I was a research assistant in NYU Multimedia and Visual Computing Lab, advised by Professor Yi Fang. I am broadly interested in 3D Computer Vision and Deep Visual Learning.  </b>
+        <b padding: 10px;>I'm a Master student in Computer Science at Carnegie Mellon University. Before that, I was a research assistant in NYU Multimedia and Visual Computing Lab, advised by Professor Yi Fang. I am broadly interested in 3D Computer Vision, Pattern Recognition and Deep Learning.   </b>
 			</td>
 			</tr>
 </tbody></table>
 
 
 <h2>Research Project:</h2>
-<a href="https://drive.google.com/file/d/1i5vtq_Vb79ImzTagbTkFDD_0B9WNtuob/view?usp=sharing" id="aa" ><center>End-To-End Hand Pose Estimation With Latent Domain Adaptation by Cycle GAN</a>
+<a href="http://papers.nips.cc/paper/8602-arbicon-net-arbitrary-continuous-geometric-transformation-networks-for-image-registration.pdf" id="aa" ><center>Arbitrary Continuous Geometric Transformation Networks for Image Registration</a>
 <h3 align="left">1 Description</h3>
 <p style="text-align:justify; text-justify:inter-ideograph;">
-	Most traditional hand pose estimations are semi-supervised learning methods that
-	require a large number of manually labeled training samples. To save those expensive and
-	time-consuming datasets, this paper proposes a novel method that replaces the real data
-	with synthetic data by using the transformation between their latent domains. After
-	finding a mapping ffrom the dataset to the low-latitude latent domain respectively for real and synthetic datasets respectively, a cycle generative adversarial network is used to
-	implement the transformation between the domains. In this process, the requirement of
-	a successful transformation necessitates the generator to complete the multitask learning,
-	thereby generating an indistinguishable potential domain while ensuring that the domain.
+	This project concerns the undetermined problem of estimating geometric transformation between image pairs. Recent methods introduce deep neural networks
+to predict the controlling parameters of hand-crafted geometric transformation
+models (e.g. thin-plate spline) for image registration and matching. However the
+low-dimension parametric models are incapable of estimating a highly complex
+geometric transform with limited flexibility to model the actual geometric deformation from image pairs. To address this issue, we present an end-to-end trainable
+deep neural networks, named Arbitrary Continuous Geometric Transformation
+Networks (Arbicon-Net), to directly predict the dense displacement field for pairwise image alignment. Arbicon-Net is generalized from training data to predict the
+desired arbitrary continuous geometric transformation in a data-driven manner for
+unseen new pair of images. Particularly, without imposing penalization terms, the
+predicted displacement vector function is proven to be spatially continuous and
+smooth. To verify the performance of Arbicon-Net, we conducted semantic alignment tests over both synthetic and real image dataset with various experimental
+settings. The results demonstrate that Arbicon-Net outperforms the previous image
+alignment techniques in identifying the image correspondences.
 </p>
 <img src="./figures/GuanjieCui1.png" width="800"/>
-<p>Figure 1: Final End-to-End Hand Pose Estimation Pipeline.</p>
+<p>Figure 1: Main Pipeline.</p>
 <h3 align="left">2 Method</h3>
 <p style="text-align:justify; text-justify:inter-ideograph;">
 	In this
-project, we propose a new idea to solve the problem of limited and expensive humanlabeled datasets. The most prominent contribution is that the transformation is implemented on latent domain instead of images. Besides, the training of the generator
-responsible for domain transformation is multi-tasking in order to save storage space
-and achieve more fast convergence. This process is also beneficial in implementing an
-end-to-end training mode. This means that the training of hand pose estimation and
-domain transformation is carried out simultaneously. As displayed in Figure.1, there are two generators and discriminators.One is mainly
-responsible for converting synthetic data to real data, and the other one carries out the opposite
-function. Ds mainly distinguishes between synthetic images and translated images from
-real images; basically, it provides high scores within the true synthetic data, and vice
-verse. Even though we want to carry out latent domain transformation, it should be kept
-in mind during an end-to-end training that the primary purpose of a generator purpose
-is still to complete the translation of one image to another. A map for the features of a certain hidden layer from the generator is extracted as an output sample of the target
-latent domain, and this output is then fed into the following basic hand pose estimation
-network to predict a pose based on the input depth image.
+project, we design a novel Arbicon-Net,
+which uses deep neural networks to predict dense displacement field to accommodate the arbitrary
+geometric transformations according to the actual requirement for image registration. This addresses
+the critical issue that the actual desired geometric transformation does not match with the one that can
+be provided by pre-defined geometric model. As displayed in Figure.1, Our proposed end-to-end trainable Arbicon-Net has three main components. 1) Geometric Feature Extractor Module; 2) Transformation Descriptor Encoder Module; 3)
+Displacement Field Predictor Module.
 </p>
-<img src="./figures/GuanjieCui2.png" width="600"/>
-<p>Figure 2: NYU Hand Dataset.</p>
+<img src="./figures/GuanjieCui2.png" width="500"/>
+<p>Figure 2: Qualitative results on PF-Pascal dataset with
+weakly supervise training.</p>
 <h3 align="left">3 Results</h3>
 <p style="text-align:justify; text-justify:inter-ideograph;">
-	In this section, we compare the result of this research with several mainstream methods and then points out the pros and cons of the approach of this research. Figure.2 showcases
-experiment results as compared to the findings achieved using several state-of-the-art
-methods. It can be seen that when the fault tolerance rate is very low, our performance is still good enough, but as the fault tolerance rate rises, we can only beat one method.
-I attribute this result to the synthetic image we generated. If the synthetic dataset is
-very different from the original data in probability distribution, despite the depth map
-has implemented domain transform, the pose is never changed, which will limit our
-method’s performance. </p>
-<img src="./figures/GuanjieCui3.png" width="700"/>
-<p>Figure 3: Comparing on NYU Dataset.</p>
+	In this section, we carried out a set of tests under different experimental settings to validate the
+performance of our proposed Arbicon-Net for its capability of estimating the geometric transformation
+for image dense correspondence in semantic alignment. In our experiment, three image datasets, Pascal VOC dataset, PF-Pascal dataset and
+Proposal Flow dataset are used to prepare both synthesized and real image dataset for the various
+tests. Pascal VOC dataset contains 28,952 images. PF-Pascal contains 1351 semantically aligned
+image pairs from 20 semantic category of Pascal VOC dataset with a 7:3:3 training/validation/testing
+split. Proposal Flow dataset with 900 image pairs from 5 categories. We randomly split the
+Proposal Flow dataset into 3 folds for k-fold validation in the test. Table 1 compares PCK scores for Arbicon-Net and baseline models for the test
+result on PF-Pascal dataset. The comparison result indicates that Arbicon-Net outperforms all baseline
+methods. To better illustrate the comparison results, we further show two pair images before and
+after image registration in Figure.2. The first two columns show the source and target images, the third
+column illustrates the transformed source image by Arbicon-Net and the fourth column illustrates the
+transformed source image by WeakAlign-4D. As we can see from the Figure, compared to baseline method WeakAlign-4D, Arbicon-Net is able to predict a fine-grained geometric transformation with
+coherent flow motion and preservation of local geometric structural details. </p>
+<img src="./figures/GuanjieCui3.png" width="600"/>
+<p>Table 1: Quantitative results on PFPascal dataset with weakly supervise training.</p>
 </div>
 <!-- <ul style="list-style: none;"><li> -->
 <script type="text/javascript" src="./Andrew Owens_files/footer.js"></script>
