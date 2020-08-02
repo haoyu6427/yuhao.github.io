@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title><center>Mengwei Ren</center></title>
+<title><center>Munachiso Nwadike</center></title>
 <style>
 	img.rounded-img {
 		border: 1px solid #eeeeee;
@@ -31,7 +31,7 @@
 
 <body>
 
-<h1><center>Mengwei Ren</h1>
+<h1><center>Munachiso Nwadike</h1>
 
 <br>
 
@@ -46,15 +46,15 @@
 	   </tr>
 		 <tr>
  	      <td><b>Program:</b></td>
- 				<td><b>Computer Science and Engineering</b></td>
+ 				<td><b>Computer Science</b></td>
  	   </tr>
 		 <tr>
  	      <td><b>School:</b></td>
- 				<td><b>New York University</b></td>
+ 				<td><b>New York University Abu Dhabi</b></td>
  	   </tr>
 		 <tr>
  	      <td><b>RA Period:</b></td>
- 				<td><b>From 2018-09 to 2019-06</b></td>
+ 				<td><b>From 2019-09 to 2020-05</b></td>
  	   </tr>
 	</tbody></table>
 
@@ -65,7 +65,7 @@
     <tbody>
 	<tr>
       <td>
-        <b padding: 10px;>I'm a Ph.D. student at New York University. Before that, I was a research assistant in NYU Multimedia and Visual Computing Lab, advised by Professor Yi Fang. I am broadly interested in 3D Computer Vision, Pattern Recognition and Deep Learning.     </b>
+        <b padding: 10px;>I'm a Co-founder of Opus foundation. Before that, I was a research assistant in New York University Abu Dhabi, advised by Professor Yi Fang. I am broadly interested in 3D Computer Vision, Pattern Recognition and Deep Learning.</b>
 			</td>
 			</tr>
 </tbody></table>
@@ -75,81 +75,49 @@
 <a href="https://arxiv.org/pdf/1711.10108.pdf" id="aa" ><center>3D Deep Dense Descriptor for Volumetric Shapes with Adversarial Networks</a>
 <h3 align="left">1 Description</h3>
 <p style="text-align:justify; text-justify:inter-ideograph;">
-	Recently researchers have been shifting their focus towards learned 3D shape descriptors from hand-craft ones
-to better address challenging issues of the deformation and
-structural variation inherently present in 3D objects. 3D
-geometric data are often transformed to 3D Voxel grids with
-regular format in order to be better fed to a deep neural net
-architecture. However, the computational intractability of
-direct application of 3D convolutional nets to 3D volumetric data severely limits the efficiency (i.e. slow processing)
-and effectiveness (i.e. unsatisfied accuracy) in processing
-3D geometric data. In this paper, powered with a novel design of adversarial networks (3D-A-Nets), we have developed a novel 3D deep dense shape descriptor (3D-DDSD)
-to address the challenging issues of efficient and effective
-3D volumetric data processing. We developed new definition of 2D multilayer dense representation (MDR) of 3D
-volumetric data to extract concise but geometrically informative shape description and a novel design of adversarial networks that jointly train a set of convolution neural
-network (CNN), recurrent neural network (RNN) and an
-adversarial discriminator. More specifically, the generator network produces 3D shape features that encourages
-the clustering of samples from the same category with correct class label, whereas the discriminator network discourages the clustering by assigning them misleading adversarial class labels. By addressing the challenges posed by the
-computational inefficiency of direct application of CNN to
-3D volumetric data, 3D-A-Nets can learn high-quality 3DDSDD which demonstrates superior performance on 3D
-shape classification and retrieval over other state-of-the-art
-techniques by a great margin.
+	Recent work in semantic segmentation has shown the effectiveness of context encoding in allowing neural networks to model spatial context for better performance. We set out
+to apply this development to the field of remote sensing. Our focus is to develop a new approach for semantic segmentation of Very High Resolution (VHR) images. This class of aerial images is often difficult to attain high quality semantic labels for, given the distinct challenges that come with images that have been remotely sensed via satellite or other aerial mechanisms. We make use of a lightweight architecture of convolutional neural networks, combined with con-
+text encoding to attain strong performance on the Vaihingen
+2D semantic labeling competition. Our approach attains a
+competitive overall accuracy, as well as a strong classwise
+performance.
 </p>
-<img src="./figures/MengweiRen1.png" width="800"/>
+<img src="./figures/Munachiso1.png" width="800"/>
 <p>Figure 1: Overview of the proposed approach.</p>
 <h3 align="left">2 Method</h3>
 <p style="text-align:justify; text-justify:inter-ideograph;">
-	The proposed network, 3D Adversarial Network (3DA-Nets), consists of a feature generator G, which tries to
-learn the distinguishable 3D-DDSD from the input MDR,
-and a feature-level discriminator D, pursuring the competing goals with G, which attempts to classify all its input
-3D-DDSD towards the ‘adversarial’ class, indicating the
-3D-DDSD is too ambiguous to be assigned with an explicit
-class label. Compared with vanilla GANs and other 3D
-shape related GANs, three major novelties of 3D-A-Nets
-are as follows. Firstly, the input of G is the newly defined
-Multilayer Dense Representation (MDR) instead of a random noise z. Compared with 3D voxel volume, MDR is
-concise but geometrically informative to be better fed into a
-Neural Network (NN). In addition, to deal with the spatial
-relationship across slice s in MDR, Recurrent Neural Network (RNN), specifically, Convolutional Long Short Term
-Memory (ConvLSTM), is introduced into G. RNN takes
-the feature map sequence extracted by CNN as input, and
-outputs the 3D-DDSD as a latent space variable (shown in
-Figure.1). Third, adversarial learning is applied, which encourages G to learn to generate a more distinguishable 3D-DDSD. The feature generator takes MDR (transformed from 3D shape) as input, and generate
-3D-DDSD; The discriminator takes 3D-DDSD as input, and produces class label (1 to N represents N predefined class labels, and N+1
-represents ‘adversarial’)
+	In this
+project, we develop SateNet which make use of a lightweight architecture of convolutional neural networks, combined with context encoding to attain strong performance on the Vaihingen 2D semantic labeling competition. SegNet is computationally inexpensive. It has just 5 convolutional blocks in its encoder and decoder respectively. The encoder of SegNet consists of the first 13 convolutional layers from VGG16 network. We make use of a modified context encoding module,
+originally introduced by Context encoding for semantic segmentation. Our version of the context
+encoding module makes use of skip connection. Initially we had a problem fitting the model, with the additional context encoder on GPU. We decided to modify the aggregation of learnable codewords to ignore the weighting
+of code residuals. However, we realised that this amounts
+to collect information from previous layers of the network
+into the context encoding module and essentially teaching
+the model not to make use of this learned information. In practise, this was affecting the accuracy of the model, limiting the testing accuracy on the Vaihingen dataset to approximately 84%. As displayed in Figure.1, The output of the SegNet architecture is passed to the modified context encoding module, from which the semantic segmentation output is given.
 </p>
-<img src="./figures/MengweiRen3.png" width="500"/>
+<img src="./figures/Munachiso2.png" width="800"/>
 <p>Table 1: Comparison with the voxel-based methods.</p>
 <h3 align="left">3 Results</h3>
 <p style="text-align:justify; text-justify:inter-ideograph;">
-	In this section, a set of experiments were carried out to
-evaluate performance of the proposed 3D-A-Nets via assessing the quality of the learned 3D-DDSD for shape classification and retrieval. The 3D models used in the experiments were chosen from the Princeton ModelNet40 that contains 12,311 models and 40 categories with imbalance distribution of the number of models in each category.
-Our method is to compare against other three deep learning methods which were developed to process the 3D volumetric data. Please note that we currently did not compare
-3D-A-Nets with projection-based methods that were developed based on using 2D projection views of a 3D model
-as input of the neural nets (i.e. MVCNN-MultiRes,
-PANORAMA-NN etc.) for the reason: the 3D models
-(triangulated mesh format) that are used to produce 2D projection views to feed the above mentioned projection-based
-methods have much higher resolution than that of 3D models (3D voxel grids format) that were fed to our 3D-A-Nets
-and other voxelization-based method (i.e. 3D ShapeNets
-and VoxNet). Table 1 shows the performance comparison between
-the proposed methods and the state-of-the-art voxel-based
-methods, namely 3D ShapeNets, 3D-GAN, and
-VoxNet. As shown in the table, the proposed 3DA-Nets could outperform all the aforementioned methods
-on Princeton ModelNet40 benchmark with a huge margin. Specifically, the classification accuracy was increased
-by 7$\%$, compared to the best state-of-the-arts voxel-based
-results reported by VoxNet. Except for quantitative
-comparisons against state-of-the-art methods, we also draw
-precision-recall curve to visualize the performance. Figure
-8 shows the precision-recall curve comparison between
-and 3D-A-Nets. The higher curve indicates better performance. Figure.\ref{fig:2}) illustrates several retrieved
-examples. The query models are randomly selected from 8
-categories, namely, range hood, monitor, bottle, plant, toilet glass, desk and vase, which are are mark with red color
-and listed at the left most column. The retrieved objects are
-listed on the right side based on their ranking orders. In
-most cases, the proposed methods could retrieve correct objects; however, for some particular cases, such as desk and
-night stand, which are even very difficult for human to distinguish, the proposed methods retrieve wrong objects. All
-the irrelevant models are marked with red boxes. </p>
-<img src="./figures/MengweiRen2.png" width="1000"/>
+	In this section, we conduct experiments to demonstrate the effectiveness of the proposed SateNet. We
+used the Vaihingen Dataset which consists of 33 image patches
+cropped from a true orthophoto(TOP) mosaic. The labeling for the images is provided at the pixel level
+in the form of an image, wherein each pixel is in the color corresponding to its label. Each image has its own labeling image, called its ground truth. There are seven categories of roads, buildings, low vegetation, trees, cars, clutter, and Undefined categories, respectively represented by
+the colors white, blue, cyan, green, yellow, red and black.
+In evaluation, we only pay mind to the F1 scores for first
+five categories. There is also a version of the image labels,
+referred to as eroded grond truth, in which the boundaries
+of objects are eroded by a circular disc of 3-pixel radius.
+Those eroded areas are then ignored during evaluation. The motivation is to reduce the impact of uncertain border definitions on the evaluation. We evaluated the model using F1score, classwise F1
+score, and Overall Accuracy. Our model compares well with other models, as can be seen from Table.1. As shown, at the time of writing this
+paper, the state of the art is NLPR3, which had an overall
+accuracy of 91.2. While their results have been relesed on
+the ISPRS website, we cannot cite them as they are yet to
+release their complimentary paper detailing their method.
+As shown in Figure.2, image showing the ground truth, compared to what our model predicts, versus what can be achieved with regular SegNet
+architecture. That particular image is patch 15 from the dataset.
+</p>
+<img src="./figures/MMunachiso3.png" width="800"/>
 <p>Figure 2: Retrieval samples.</p>
 </div>
 <!-- <ul style="list-style: none;"><li> -->
