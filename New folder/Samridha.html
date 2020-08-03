@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title><center>Mingyang Wang</center></title>
+<title><center>Samridha Shrestha</center></title>
 <style>
 	img.rounded-img {
 		border: 1px solid #eeeeee;
@@ -31,7 +31,7 @@
 
 <body>
 
-<h1><center>Mingyang Wang</h1>
+<h1><center>Samridha Shrestha</h1>
 
 <br>
 
@@ -50,7 +50,7 @@
  	   </tr>
 		 <tr>
  	      <td><b>School:</b></td>
- 				<td><b>Courant Institute of Mathematical Science, New York University</b></td>
+ 				<td><b>New York University Abu Dhabi</b></td>
  	   </tr>
 		 <tr>
  	      <td><b>RA Period:</b></td>
@@ -65,65 +65,65 @@
     <tbody>
 	<tr>
       <td>
-        <b padding: 10px;>I'm a Ph.D. student ad Duke University. Before that, I was a research assistant in NYU Multimedia and Visual Computing Lab, advised by Professor Yi Fang. I am broadly interested in 3D Computer Vision, Pattern Recognition and Deep Learning. </b>
+        <b padding: 10px;>I'm an undergraduate student at New York University Abu Dhabi and a research assistant in NYU Multimedia and Visual Computing Lab, advised by Professor Yi Fang. I am broadly interested in 3D Computer Vision, Pattern Recognition and Deep Learning.</b>
 			</td>
 			</tr>
 </tbody></table>
 
 
 <h2>Research Project:</h2>
-<a href="https://arxiv.org/pdf/1910.05909.pdf" id="aa" ><center>Density-aware Convolution Networks for Airborne LiDAR Point Cloud Classification</a>
+<a href="https://drive.google.com/file/d/1FaKH4rze6xXHLKcMMJC8Mffh6xhvm-xM/view?usp=sharing" id="aa" ><center>Ensemble AutoDecoder CompNets for 3D Point Cloud Pair Encoding and Classification</a>
 <h3 align="left">1 Description</h3>
 <p style="text-align:justify; text-justify:inter-ideograph;">
-	To better address challenging issues of the irregularity and inhomogeneity inherently present in 3D point clouds, researchers have shifted
-their focus from designing hand-crafted point features toward learning 3D point signatures using deep neural networks for 3D point
-cloud classification. Recently proposed deep learning-based point cloud classification methods either apply 2D CNNs on projected
-feature images or apply 1D convolutional layers directly on raw point sets. These methods cannot adequately recognize fine-grained local
-structures caused by the uneven density distribution of the point cloud data. In this paper, to address this challenging issue, we introduced
-a density-aware convolutional module that uses the pointwise density to reweight the learnable weights of convolution kernels. The
-proposed convolution module can fully approximate the 3D continuous convolution on unevenly distributed 3D point sets. Based on this
-convolution module, we further developed a multiscale fully convolutional neural network with downsampling and upsampling blocks to
-enable hierarchical point feature learning. In addition, to regularize the global semantic context, we implemented a context encoding
-module to predict a global context encoding and formulated a context encoding regularizer to enforce the predicted context encoding to
-align with the ground truth encoding. The overall network can be trained in an end-to-end fashion with the raw 3D coordinates and
-the height above ground as inputs. Experiments on the International Society for Photogrammetry and Remote Sensing (ISPRS) 3D
-labeling benchmark demonstrated the superiority of the proposed method for point cloud classification. Our model achieved a new
-state-of-the-art performance with an average F1 score of 71.2$\%$ and improved the performance by a large margin on several categories
-(such as powerline, impervious surface, car, and facade).
+	Recent work in semantic segmentation has shown the effectiveness of context encoding in allowing neural networks to model spatial context for better performance. We set out
+to apply this development to the field of remote sensing. Our focus is to develop a new approach for semantic segmentation of Very High Resolution (VHR) images. This class of aerial images is often difficult to attain high quality semantic labels for, given the distinct challenges that come with images that have been remotely sensed via satellite or other aerial mechanisms. We make use of a lightweight architecture of convolutional neural networks, combined with con-
+text encoding to attain strong performance on the Vaihingen
+2D semantic labeling competition. Our approach attains a
+competitive overall accuracy, as well as a strong classwise
+performance.
 </p>
-<img src="./figures/MingyaoWang1.png" width="500"/>
-<p>Figure 1: The pipeline of the proposed method.</p>
+<img src="./figures/Samridha14.png" width="500"/>
+<p>Figure 1: Ensemble AutoDecoder Network.</p>
 <h3 align="left">2 Method</h3>
 <p style="text-align:justify; text-justify:inter-ideograph;">
-This project introduces a novel density-aware convolution module that directly applies convolutions on irregular point clouds
-to learn representative point features. Figure.\ref{fig:1} shows overview of the proposed method for airborne point cloud classification. Our model starts with an encoder network to extract
-high-level semantic features using a newly proposed density-aware convolution module. Then, a context encoding module was adopted
-to learn a global context encoding, which was further fed into a regularization module to enforce the predicted context encoding to be
-aligned with the ground truth encoding. Finally, a decoder network with a successive density-aware convolution module and upsampling
-block were used to generate per-point classification results.
+	We propose an ensemble encoder-less decoder comparison
+network (Ensemble ADNet-CompNet) to extract the 3D shape descriptors or the latent vectors that define the geometric transformation between two point clouds for 3D object classification and database retrieval. Our ensemble network is inspired by the autodecoder paradigm from DeepSDF and the
+point-cloud pair latent vector extraction formulation from EPD-Net. The latent vector z is an embedding layer with a dimension of
+256 values. These latent vectors are concatenated to each point cloud samples and fed into each of the AutoDecoders in the ensemble(Figure.\ref{fig:1}). The inputs are convolved with multiple 1D Convolutional layers paired with leaky ReLU activations.
+Each section in the ensemble represents a network with
+increasing depths to capture both local level features and global level features and more importantly to induce inde-
+pendence among the models. As displayed in Figure.\ref{fig:2}, the Comparison network (CompNet) is a shallow neural
+network with only one fully connected hidden layer. The CompNet takes the latent encoding generated by the Au-
+toDecoder as input and generates a class similarity score at the end of its feed-forward architecture using the sigmoid
+activation.
 </p>
-<img src="./figures/MingyaoWang2.png" width="500"/>
-<p>Table 1: The classification confusion matrix of our DANCE-NET model.</p>
+<img src="./figures/Samridha6.png" width="500"/>
+<p>Figure 2: Ensemble CompNet Architecture.</p>
 <h3 align="left">3 Results</h3>
 <p style="text-align:justify; text-justify:inter-ideograph;">
-	In this section, we conduct experiments to demonstrate the effectiveness of the proposed DANCE-NET model for airborne LiDAR
-point cloud labeling. To quantitatively evaluate the classification performance, we calculated the classification confusion matrix, precision, recall and
-F1 score of each category and listed the results in Table 1. As
-we can see in this Table, our proposed model obtained F1 scores higher than 70$\%$ for six of the categories, including powerline, low
-vegetation, impervious surfaces, car, roof, and tree. In addition,
-our model achieved a reasonable classification performance on
-the facade category, while the classification performances on the
-fence/hedge and shrub categories were relatively lower. As Table
-1 shows, most of the fence/hedge points were incorrectly classified
-as shrubs. One of the main reasons is that the fence/hedge category contains fewer points and presents similar spatial distribution and
-topological characteristics with the shrub category, which causes
-the model to not be fully trained and thus hinders the model from
-differentiating these two categories. Although powerline and car
-categories also have fewer points in the dataset, they present completely different characteristics from other categories and thereby
-acquired higher classification performance.
+	In this section, we conduct experiments to demonstrate the effectiveness of the proposed ADNet-CompNET. We use the PointNet7 and PointNet Full and the Model-Net data for training and testing our ADNet-CompNET ensemble models. The PointNet7 and PointNet Full contain
+10817-2507 and 12137-2874 train-test point-clouds with 2048
+points in each cloud. ModelNet10 and ModelNet40 have 3991-
+908 and 7598-1860 train-test point-clouds respectively, with each cloud having 5000 points. All point-clouds were segmented and contained a single 3D object from a distinct class. However, we could only get 33 out of the 40 classes in the ModelNet40 dataset because our .off to .npy conversion module (kaolin) could not resolve some of the .off files in the ModelNet40 dataset. The results of the latent encoding learning and class similar-
+ity classification task immediately show that the ensemble CompNet significantly outperforms the single CompNet architecture (EPD-Net architecture) boosting accuracy from 87% to 97%. This improvement is even more evident when
+we train our ADNet-CompNets on the full PointNet data
+as ensemble CompNets accuracy is increased to an average
+of 9% from 87% on the single CompNet. EPD-Net uses a
+deeper architecture similar to the single CompNet structure
+but is prone to overfitting to the training data, which would
+explain its lower accuracy on the classification task. As shown in Table 1, after training the AutoDecoder on 10817 samples from
+PointNet7, the ensemble CompNets architectures beat all
+other models in terms of classification accuracy by 10$\%$ on
+average. The accuracies of the model themselves
+had an average error of + 1% as accuracy fluctuates by + 1%
+during repetitions. We also show that our neural network
+models (Single and Ensemble CompNets) always outperform
+all other classical supervised machine learning models in terms of accuracy, f1-scores and Receiving Operator Char-
+acteristic Area Under Curve (ROC-AUC) for the 3D object classification task (Table 1). These results demonstrate that neural networks are highly suited to the task of 3D object classification using latent transformation encodings
+compared to non-neural network models.
 </p>
-<img src="./figures/MingyaoWang3.png" width="600"/>
-<p>Figure 2: The classification results with different model configurations.</p>
+<img src="./figures/Samridha7.png" width="600"/>
+<p>Table 1: Metrics for the classification task on the PointNet7 dataset.</p>
 </div>
 <!-- <ul style="list-style: none;"><li> -->
 <script type="text/javascript" src="./Andrew Owens_files/footer.js"></script>
