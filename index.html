@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title><center>Mingyang Wang</center></title>
+<title><center>Mengchen Xu</center></title>
 <style>
 	img.rounded-img {
 		border: 1px solid #eeeeee;
@@ -31,7 +31,7 @@
 
 <body>
 
-<h1><center>Mingyang Wang</h1>
+<h1><center>Mengchen Xu</h1>
 
 <br>
 
@@ -50,7 +50,7 @@
  	   </tr>
 		 <tr>
  	      <td><b>School:</b></td>
- 				<td><b>Courant Institute of Mathematical Science, New York University</b></td>
+ 				<td><b>New York University Shanghai</b></td>
  	   </tr>
 		 <tr>
  	      <td><b>RA Period:</b></td>
@@ -65,65 +65,64 @@
     <tbody>
 	<tr>
       <td>
-        <b padding: 10px;>I'm a Ph.D. student ad Duke University. Before that, I was a research assistant in NYU Multimedia and Visual Computing Lab, advised by Professor Yi Fang. I am broadly interested in 3D Computer Vision, Pattern Recognition and Deep Learning. </b>
+        <b padding: 10px;>I'm a undergraduate student at New York University Shanghai and a research assistant in NYU Multimedia and Visual Computing Lab, advised by Professor Yi Fang. I am broadly interested in 3D Computer Vision, Pattern Recognition and Deep Learning. </b>
 			</td>
 			</tr>
 </tbody></table>
 
 
 <h2>Research Project:</h2>
-<a href="https://arxiv.org/pdf/1910.05909.pdf" id="aa" ><center>Density-aware Convolution Networks for Airborne LiDAR Point Cloud Classification</a>
+<a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Shi_Unsupervised_Deep_Shape_Descriptor_With_Point_Distribution_Learning_CVPR_2020_paper.pdf" id="aa" ><center>Unsupervised 3D Deep Learning</a>
 <h3 align="left">1 Description</h3>
 <p style="text-align:justify; text-justify:inter-ideograph;">
-	To better address challenging issues of the irregularity and inhomogeneity inherently present in 3D point clouds, researchers have shifted
-their focus from designing hand-crafted point features toward learning 3D point signatures using deep neural networks for 3D point
-cloud classification. Recently proposed deep learning-based point cloud classification methods either apply 2D CNNs on projected
-feature images or apply 1D convolutional layers directly on raw point sets. These methods cannot adequately recognize fine-grained local
-structures caused by the uneven density distribution of the point cloud data. In this paper, to address this challenging issue, we introduced
-a density-aware convolutional module that uses the pointwise density to reweight the learnable weights of convolution kernels. The
-proposed convolution module can fully approximate the 3D continuous convolution on unevenly distributed 3D point sets. Based on this
-convolution module, we further developed a multiscale fully convolutional neural network with downsampling and upsampling blocks to
-enable hierarchical point feature learning. In addition, to regularize the global semantic context, we implemented a context encoding
-module to predict a global context encoding and formulated a context encoding regularizer to enforce the predicted context encoding to
-align with the ground truth encoding. The overall network can be trained in an end-to-end fashion with the raw 3D coordinates and
-the height above ground as inputs. Experiments on the International Society for Photogrammetry and Remote Sensing (ISPRS) 3D
-labeling benchmark demonstrated the superiority of the proposed method for point cloud classification. Our model achieved a new
-state-of-the-art performance with an average F1 score of 71.2$\%$ and improved the performance by a large margin on several categories
-(such as powerline, impervious surface, car, and facade).
+	Deep learning models have achieved great success in supervised shape descriptor learning for 3D shape retrieval,
+classification, and correspondence. However, the unsupervised shape descriptor calculated via deep learning is less
+studied than that of supervised ones due to the design challenges of unsupervised neural network architecture. This
+paper proposes a novel probabilistic framework for the
+learning of unsupervised deep shape descriptors with point
+distribution learning. In our approach, we firstly associate
+each point with a Gaussian, and the point clouds are modeled as the distribution of the points. We then use deep
+neural networks (DNNs) to model a maximum likelihood
+estimation process that is traditionally solved with an iterative Expectation-Maximization (EM) process. Our key
+novelty is that “training” these DNNs with unsupervised
+self-correspondence L2 distance loss will elegantly reveal
+the statically significant deep shape descriptor representation for the distribution of the point clouds. We have conducted experiments over various 3D datasets. Qualitative
+and quantitative comparisons demonstrate that our proposed method achieves superior classification performance
+over existing unsupervised 3D shape descriptors. In addition, we verified the following attractive properties of our
+shape descriptor through experiments: multi-scale shape
+representation, robustness to shape rotation, and robustness
+to noise.
 </p>
-<img src="./figures/MingyaoWang1.png" width="500"/>
+<img src="./figures/YiShi1.png" width="700"/>
 <p>Figure 1: The pipeline of the proposed method.</p>
 <h3 align="left">2 Method</h3>
 <p style="text-align:justify; text-justify:inter-ideograph;">
-This project introduces a novel density-aware convolution module that directly applies convolutions on irregular point clouds
-to learn representative point features. Figure.\ref{fig:1} shows overview of the proposed method for airborne point cloud classification. Our model starts with an encoder network to extract
-high-level semantic features using a newly proposed density-aware convolution module. Then, a context encoding module was adopted
-to learn a global context encoding, which was further fed into a regularization module to enforce the predicted context encoding to be
-aligned with the ground truth encoding. Finally, a decoder network with a successive density-aware convolution module and upsampling
-block were used to generate per-point classification results.
+	paper proposes a novel probabilistic framework for the
+	learning of unsupervised deep shape descriptors with point
+	distribution learning. As displayed in Figure.1, we concatenate a randomly initialized vector z to each point of the sampled instance shape. The L2 point
+	distance loss between the decoded point set and the original point set will be calculated. During the decoder training phase, the loss will
+	be back-propagated to update the shape descriptors and decoder simultaneously. During the descriptor generation phase, the loss will only
+	be used to update the shape descriptors.
 </p>
-<img src="./figures/MingyaoWang2.png" width="500"/>
-<p>Table 1: The classification confusion matrix of our DANCE-NET model.</p>
+<img src="./figures/YiShi3.png" width="600"/>
+<p>Table 1: Classification evaluation on ModelNet40.</p>
 <h3 align="left">3 Results</h3>
 <p style="text-align:justify; text-justify:inter-ideograph;">
-	In this section, we conduct experiments to demonstrate the effectiveness of the proposed DANCE-NET model for airborne LiDAR
-point cloud labeling. To quantitatively evaluate the classification performance, we calculated the classification confusion matrix, precision, recall and
-F1 score of each category and listed the results in Table 1. As
-we can see in this Table, our proposed model obtained F1 scores higher than 70$\%$ for six of the categories, including powerline, low
-vegetation, impervious surfaces, car, roof, and tree. In addition,
-our model achieved a reasonable classification performance on
-the facade category, while the classification performances on the
-fence/hedge and shrub categories were relatively lower. As Table
-1 shows, most of the fence/hedge points were incorrectly classified
-as shrubs. One of the main reasons is that the fence/hedge category contains fewer points and presents similar spatial distribution and
-topological characteristics with the shrub category, which causes
-the model to not be fully trained and thus hinders the model from
-differentiating these two categories. Although powerline and car
-categories also have fewer points in the dataset, they present completely different characteristics from other categories and thereby
-acquired higher classification performance.
+	In this section, we evaluate our shape descriptor by performing a classification task. For a direct and accurate comparison, we
+follow the same data settings as Learning a probabilistic latent space of object shapes
+via 3d generative-adversarial modeling, and our network
+is trained with the seven major categories of ShapeNet.We then evaluate the generated feature descriptors on the
+benchmark ModelNet40 by training a simple MLP classifier. There are unsupervised approaches where
+the networks are trained using the full 55 categories from
+the ShapeNet55 dataset that contains 57,000 shapes in total. Due to different data settings in the experiment, a direct
+comparison based on accuracy might not be most appropriate. Table 1 shows the performance comparison between
+our proposed approach and the state-of-the-art supervised
+and unsupervised methods. Our unsupervised shape representation outperforms the 3DGAN by scoring 84.7% on
+ModelNet40. Considered that most of the categories from
+ModelNet are completely novel to our model, it demonstrates a great out-of-category generalization capability.
 </p>
-<img src="./figures/MingyaoWang3.png" width="600"/>
-<p>Figure 2: The classification results with different model configurations.</p>
+<img src="./figures/YiShi2.png" width="600"/>
+<p>Figure 2: Reconstruction results of shape descriptors on instances from ShapeNet.</p>
 </div>
 <!-- <ul style="list-style: none;"><li> -->
 <script type="text/javascript" src="./Andrew Owens_files/footer.js"></script>
