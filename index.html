@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title><center>Mengchen Xu</center></title>
+<title><center>Daitao Xing</center></title>
 <style>
 	img.rounded-img {
 		border: 1px solid #eeeeee;
@@ -31,7 +31,7 @@
 
 <body>
 
-<h1><center>Mengchen Xu</h1>
+<h1><center>Daitao Xing</h1>
 
 <br>
 
@@ -42,19 +42,19 @@
 	    <tbody>
 		<tr>
 	      <td><b>Status:</b></td>
-				<td><b>Undergraduate Student</b></td>
+				<td><b>MS Student</b></td>
 	   </tr>
 		 <tr>
  	      <td><b>Program:</b></td>
- 				<td><b>Computer Science</b></td>
+ 				<td><b>Computer  Science  and  Engineering</b></td>
  	   </tr>
 		 <tr>
  	      <td><b>School:</b></td>
- 				<td><b>New York University Shanghai</b></td>
+ 				<td><b>Tandon School of Engineering, New York University</b></td>
  	   </tr>
 		 <tr>
  	      <td><b>RA Period:</b></td>
- 				<td><b>From 2019-09 to 2020-05</b></td>
+ 				<td><b>From 2018-09 to 2019-06</b></td>
  	   </tr>
 	</tbody></table>
 
@@ -65,63 +65,58 @@
     <tbody>
 	<tr>
       <td>
-        <b padding: 10px;>I'm a undergraduate student at New York University Shanghai and a research assistant in NYU Multimedia and Visual Computing Lab, advised by Professor Yi Fang. I am broadly interested in 3D Computer Vision, Pattern Recognition and Deep Learning. </b>
+        <b padding: 10px;>I'm a Ph.D. student at New York University. Before that, I was a research assistant in NYU Multimedia and Visual Computing Lab, advised by Professor Yi Fang. I am broadly interested in 3D Computer Vision, Pattern Recognition and Deep Learning.   </b>
 			</td>
 			</tr>
 </tbody></table>
 
 
 <h2>Research Project:</h2>
-<a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Shi_Unsupervised_Deep_Shape_Descriptor_With_Point_Distribution_Learning_CVPR_2020_paper.pdf" id="aa" ><center>Unsupervised 3D Deep Learning</a>
+<a href="https://arxiv.org/pdf/1711.11249.pdf" id="aa" ><center>ArbiText: Arbitrary-Oriented Text Detection in Unconstrained Scene</a>
 <h3 align="left">1 Description</h3>
 <p style="text-align:justify; text-justify:inter-ideograph;">
-	Deep learning models have achieved great success in supervised shape descriptor learning for 3D shape retrieval,
-classification, and correspondence. However, the unsupervised shape descriptor calculated via deep learning is less
-studied than that of supervised ones due to the design challenges of unsupervised neural network architecture. This
-paper proposes a novel probabilistic framework for the
-learning of unsupervised deep shape descriptors with point
-distribution learning. In our approach, we firstly associate
-each point with a Gaussian, and the point clouds are modeled as the distribution of the points. We then use deep
-neural networks (DNNs) to model a maximum likelihood
-estimation process that is traditionally solved with an iterative Expectation-Maximization (EM) process. Our key
-novelty is that “training” these DNNs with unsupervised
-self-correspondence L2 distance loss will elegantly reveal
-the statically significant deep shape descriptor representation for the distribution of the point clouds. We have conducted experiments over various 3D datasets. Qualitative
-and quantitative comparisons demonstrate that our proposed method achieves superior classification performance
-over existing unsupervised 3D shape descriptors. In addition, we verified the following attractive properties of our
-shape descriptor through experiments: multi-scale shape
-representation, robustness to shape rotation, and robustness
-to noise.
+	Arbitrary-oriented text detection in the wild is a very
+challenging task, due to the aspect ratio, scale, orientation, and illumination variations. In this project, we propose a novel method, namely Arbitrary-oriented Text (or
+ArbText for short) detector, for efficient text detection in
+unconstrained natural scene images. Specifically, we first
+adopt the circle anchors rather than the rectangular ones
+to represent bounding boxes, which is more robust to orientation variations. Subsequently, we incorporate a pyramid pooling module into the Single Shot MultiBox Detector framework, in order to simultaneously explore the local and global visual information, which can therefore generate more confidential detection results. Experiments on
+established scene-text datasets, such as the ICDAR 2015
+and MSRA-TD500 datasets, have demonstrated the superior performance of the proposed method, compared to the
+state-of-the-art approaches.
 </p>
-<img src="./figures/GuanjieCui1.png" width="700"/>
+<img src="./figures/DaitaoXing1.png" width="700"/>
 <p>Figure 1: The pipeline of the proposed method.</p>
 <h3 align="left">2 Method</h3>
 <p style="text-align:justify; text-justify:inter-ideograph;">
-	paper proposes a novel probabilistic framework for the
-	learning of unsupervised deep shape descriptors with point
-	distribution learning. As displayed in Figure.1, we concatenate a randomly initialized vector z to each point of the sampled instance shape. The L2 point
-	distance loss between the decoded point set and the original point set will be calculated. During the decoder training phase, the loss will
-	be back-propagated to update the shape descriptors and decoder simultaneously. During the descriptor generation phase, the loss will only
-	be used to update the shape descriptors.
+	In this
+project, we propose a novel method, namely Arbitrary-oriented Text (or
+ArbText for short) detector, for efficient text detection in
+unconstrained natural scene images. As displayed in Figure.1, given an input image with a size of 384×384, VGG-16 base network
+outputs the first feature map from conv4 3 layer. More feature maps with cascading sizes are extracted from extra layers
+following the first feature map. The first feature map is also used to produce different sub-region representations through the
+Pyramid Pooling Module. These representation layers are then concatenate feature maps with same size to output the final
+feature maps. Finally, those maps are fed into a convolution layer to get the final.
 </p>
-<img src="./figures/YiShi3.png" width="600"/>
+<img src="./figures/DaitaoXing2.png" width="400"/>
 <p>Table 1: Classification evaluation on ModelNet40.</p>
 <h3 align="left">3 Results</h3>
 <p style="text-align:justify; text-justify:inter-ideograph;">
-	In this section, we evaluate our shape descriptor by performing a classification task. For a direct and accurate comparison, we
-follow the same data settings as Learning a probabilistic latent space of object shapes
-via 3d generative-adversarial modeling, and our network
-is trained with the seven major categories of ShapeNet.We then evaluate the generated feature descriptors on the
-benchmark ModelNet40 by training a simple MLP classifier. There are unsupervised approaches where
-the networks are trained using the full 55 categories from
-the ShapeNet55 dataset that contains 57,000 shapes in total. Due to different data settings in the experiment, a direct
-comparison based on accuracy might not be most appropriate. Table 1 shows the performance comparison between
-our proposed approach and the state-of-the-art supervised
-and unsupervised methods. Our unsupervised shape representation outperforms the 3DGAN by scoring 84.7% on
-ModelNet40. Considered that most of the categories from
-ModelNet are completely novel to our model, it demonstrates a great out-of-category generalization capability.
+	In this section, in order to evaluate the performance of the proposed
+method, we ran experiments on two benchmark datasets:
+the ICDAR 2015 dataset and the MSRA-TD500(TD500)
+dataset. Figure.2 shows several detection results taken from the
+testing dataset of ICDAR 2015. Our proposed method
+ArbiText can distinguish and localize all kinds of scene text
+in noisy backgrounds. As shown in Table 1, we list the results of our model along with other
+state-of-art object and text detection methods. The results
+were obtained from the original papers. The best result of
+this dataset was obtained by Seglink which achieved a
+F-measure score of 75.0%. However, our model obtained
+a score of 75.9%. The improvement comes from the high
+precision rate we obtained, which outperforms the second highest model by 6.1$\%$
 </p>
-<img src="./figures/YiShi2.png" width="600"/>
+<img src="./figures/DaitaoXing3.png" width="600"/>
 <p>Figure 2: Reconstruction results of shape descriptors on instances from ShapeNet.</p>
 </div>
 <!-- <ul style="list-style: none;"><li> -->
