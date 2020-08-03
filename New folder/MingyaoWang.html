@@ -88,7 +88,7 @@ module to predict a global context encoding and formulated a context encoding re
 align with the ground truth encoding. The overall network can be trained in an end-to-end fashion with the raw 3D coordinates and
 the height above ground as inputs. Experiments on the International Society for Photogrammetry and Remote Sensing (ISPRS) 3D
 labeling benchmark demonstrated the superiority of the proposed method for point cloud classification. Our model achieved a new
-state-of-the-art performance with an average F1 score of 71.2$\%$ and improved the performance by a large margin on several categories
+state-of-the-art performance with an average F1 score of 71.2% and improved the performance by a large margin on several categories
 (such as powerline, impervious surface, car, and facade).
 </p>
 <img src="./figures/MingyaoWang1.png" width="700"/>
@@ -96,7 +96,7 @@ state-of-the-art performance with an average F1 score of 71.2$\%$ and improved t
 <h3 align="left">2 Method</h3>
 <p style="text-align:justify; text-justify:inter-ideograph;">
 This project introduces a novel density-aware convolution module that directly applies convolutions on irregular point clouds
-to learn representative point features. Figure.\ref{fig:1} shows overview of the proposed method for airborne point cloud classification. Our model starts with an encoder network to extract
+to learn representative point features. Figure.1 shows overview of the proposed method for airborne point cloud classification. Our model starts with an encoder network to extract
 high-level semantic features using a newly proposed density-aware convolution module. Then, a context encoding module was adopted
 to learn a global context encoding, which was further fed into a regularization module to enforce the predicted context encoding to be
 aligned with the ground truth encoding. Finally, a decoder network with a successive density-aware convolution module and upsampling
@@ -109,7 +109,7 @@ block were used to generate per-point classification results.
 	In this section, we conduct experiments to demonstrate the effectiveness of the proposed DANCE-NET model for airborne LiDAR
 point cloud labeling. To quantitatively evaluate the classification performance, we calculated the classification confusion matrix, precision, recall and
 F1 score of each category and listed the results in Table 1. As
-we can see in this Table, our proposed model obtained F1 scores higher than 70$\%$ for six of the categories, including powerline, low
+we can see in this Table, our proposed model obtained F1 scores higher than 70% for six of the categories, including powerline, low
 vegetation, impervious surfaces, car, roof, and tree. In addition,
 our model achieved a reasonable classification performance on
 the facade category, while the classification performances on the
