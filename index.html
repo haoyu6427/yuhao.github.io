@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title><center>Yi Shi</center></title>
+<title><center>Jianchun Chen</center></title>
 <style>
 	img.rounded-img {
 		border: 1px solid #eeeeee;
@@ -28,17 +28,20 @@
 
 
 
-<div class="div1">
+
 <body>
+<div class="div1">
+<h1><center>Jianchun Chen</h1>
 	<table border="0" cellspacing="20">
-	  <tbody><tr>
-	    <td><img class="rounded-img" src="./figures/YiShi_Fig.jpeg" style="height:250px"></td>
-	    <td width="30"></td>
-	    <td valign="top">
+		<tbody><tr>
+			<td><img class="rounded-img" src="./figures/JianchunChen_Fig.jpg" style="height:250px"></td>
+			<td width="30"></td>
+			<td valign="top">
 				<br><br><br><br>
-	      <font size="8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yi Shi</font>
-	    </td>
-	  </tr></tbody></table>
+				<font size="8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jianchun Chen</font>
+			</td>
+		</tr></tbody></table>
+
 
 		<h2>Personal Information:</h2>
 	  <table cellpadding="5">
@@ -46,19 +49,19 @@
 	    <tbody>
 		<tr>
 	      <td><b>Status:</b></td>
-				<td><b>MS Student</b></td>
+				<td><b>Undergraduate Student</b></td>
 	   </tr>
 		 <tr>
  	      <td><b>Program:</b></td>
- 				<td><b>Computer  Science  and  Engineering</b></td>
+ 				<td><b>Computer Science</b></td>
  	   </tr>
 		 <tr>
  	      <td><b>School:</b></td>
- 				<td><b>Tandon School of Engineering, New York University</b></td>
+ 				<td><b>Xiamen University</b></td>
  	   </tr>
 		 <tr>
  	      <td><b>RA Period:</b></td>
- 				<td><b>From 2019-09 to 2020-06</b></td>
+ 				<td><b>From 2018-06 to 2019-06</b></td>
  	   </tr>
 	</tbody></table>
 
@@ -69,64 +72,63 @@
     <tbody>
 	<tr>
       <td>
-        <b padding: 10px;>I'm a master student at New York University and a research assistant in NYU Multimedia and Visual Computing Lab, advised by Professor Yi Fang. I am broadly interested in 3D Computer Vision, Pattern Recognition and Deep Learning.  </b>
+        <b padding: 10px;>I'm a Master student in Computer Science at Carnegie Mellon University. Before that, I was a research assistant in NYU Multimedia and Visual Computing Lab, advised by Professor Yi Fang. I am broadly interested in 3D Computer Vision, Pattern Recognition and Deep Learning.   </b>
 			</td>
 			</tr>
 </tbody></table>
 
 
 <h2>Research Project:</h2>
-<a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Shi_Unsupervised_Deep_Shape_Descriptor_With_Point_Distribution_Learning_CVPR_2020_paper.pdf" id="aa" ><center>Unsupervised 3D Deep Learning</a>
+<a href="http://papers.nips.cc/paper/8602-arbicon-net-arbitrary-continuous-geometric-transformation-networks-for-image-registration.pdf" id="aa" ><center>Arbitrary Continuous Geometric Transformation Networks for Image Registration</a>
 <h3 align="left">1 Description</h3>
 <p style="text-align:justify; text-justify:inter-ideograph;">
-	Deep learning models have achieved great success in supervised shape descriptor learning for 3D shape retrieval,
-classification, and correspondence. However, the unsupervised shape descriptor calculated via deep learning is less
-studied than that of supervised ones due to the design challenges of unsupervised neural network architecture. This
-paper proposes a novel probabilistic framework for the
-learning of unsupervised deep shape descriptors with point
-distribution learning. In our approach, we firstly associate
-each point with a Gaussian, and the point clouds are modeled as the distribution of the points. We then use deep
-neural networks (DNNs) to model a maaximum likelihood
-estimation process that is traditionally solved with an iterative Expectation-Maximization (EM) process. Our key
-novelty is that “training” these DNNs with unsupervised
-self-correspondence L2 distance loss will elegantly reveal
-the statically significant deep shape descriptor representation for the distribution of the point clouds. We have conducted experiments over various 3D datasets. Qualitative
-and quantitative comparisons demonstrate that our proposed method achieves superior classification performance
-over existing unsupervised 3D shape descriptors. In addition, we verified the following attractive properties of our
-shape descriptor through experiments: multi-scale shape
-representation, robustness to shape rotation, and robustness
-to noise.
+	This project concerns the undetermined problem of estimating geometric transformation between image pairs. Recent methods introduce deep neural networks
+to predict the controlling parameters of hand-crafted geometric transformation
+models (e.g. thin-plate spline) for image registration and matching. However the
+low-dimension parametric models are incapable of estimating a highly complex
+geometric transform with limited flexibility to model the actual geometric deformation from image pairs. To address this issue, we present an end-to-end trainable
+deep neural networks, named Arbitrary Continuous Geometric Transformation
+Networks (Arbicon-Net), to directly predict the dense displacement field for pairwise image alignment. Arbicon-Net is generalized from training data to predict the
+desired arbitrary continuous geometric transformation in a data-driven manner for
+unseen new pair of images. Particularly, without imposing penalization terms, the
+predicted displacement vector function is proven to be spatially continuous and
+smooth. To verify the performance of Arbicon-Net, we conducted semantic alignment tests over both synthetic and real image dataset with various experimental
+settings. The results demonstrate that Arbicon-Net outperforms the previous image
+alignment techniques in identifying the image correspondences.
 </p>
-<img src="./figures/YiShi1.png" width="700"/>
-<p>Figure 1: The pipeline of the proposed method.</p>
+<img src="./figures/JianchunChen1.png" width="800"/>
+<p>Figure 1: Main Pipeline.</p>
 <h3 align="left">2 Method</h3>
 <p style="text-align:justify; text-justify:inter-ideograph;">
-	This project proposes a novel probabilistic framework for the
-	learning of unsupervised deep shape descriptors with point
-	distribution learning. As displayed in Figure.1, we concatenate a randomly initialized vector z to each point of the sampled instance shape. The L2 point
-	distance loss between the decoded point set and the original point set will be calculated. During the decoder training phase, the loss will
-	be back-propagated to update the shape descriptors and decoder simultaneously. During the descriptor generation phase, the loss will only
-	be used to update the shape descriptors.
+	In this
+project, we design a novel Arbicon-Net,
+which uses deep neural networks to predict dense displacement field to accommodate the arbitrary
+geometric transformations according to the actual requirement for image registration. This addresses
+the critical issue that the actual desired geometric transformation does not match with the one that can
+be provided by pre-defined geometric model. As displayed in Figure.1, Our proposed end-to-end trainable Arbicon-Net has three main components. 1) Geometric Feature Extractor Module; 2) Transformation Descriptor Encoder Module; 3)
+Displacement Field Predictor Module.
 </p>
-<img src="./figures/YiShi3.png" width="400"/>
-<p>Table 1: Classification evaluation on ModelNet40.</p>
+<img src="./figures/JianchunChen2.png" width="300"/>
+<p>Table 1: Quantitative results on PFPascal dataset with weakly supervise training.</p>
 <h3 align="left">3 Results</h3>
 <p style="text-align:justify; text-justify:inter-ideograph;">
-	In this section, we evaluate our shape descriptor by performing a classification task. For a direct and accurate comparison, we
-follow the same data settings as Learning a probabilistic latent space of object shapes
-via 3d generative-adversarial modeling, and our network
-is trained with the seven major categories of ShapeNet.We then evaluate the generated feature descriptors on the
-benchmark ModelNet40 by training a simple MLP classifier. There are unsupervised approaches where
-the networks are trained using the full 55 categories from
-the ShapeNet55 dataset that contains 57,000 shapes in total. Due to different data settings in the experiment, a direct
-comparison based on accuracy might not be most appropriate. Table 1 shows the performance comparison between
-our proposed approach and the state-of-the-art supervised
-and unsupervised methods. Our unsupervised shape representation outperforms the 3DGAN by scoring 84.7% on
-ModelNet40. Considered that most of the categories from
-ModelNet are completely novel to our model, it demonstrates a great out-of-category generalization capability.
-</p>
-<img src="./figures/YiShi2.png" width="600"/>
-<p>Figure 2: Reconstruction results of shape descriptors on instances from ShapeNet.</p>
+	In this section, we carried out a set of tests under different experimental settings to validate the
+performance of our proposed Arbicon-Net for its capability of estimating the geometric transformation
+for image dense correspondence in semantic alignment. In our experiment, three image datasets, Pascal VOC dataset, PF-Pascal dataset and
+Proposal Flow dataset are used to prepare both synthesized and real image dataset for the various
+tests. Pascal VOC dataset contains 28,952 images. PF-Pascal contains 1351 semantically aligned
+image pairs from 20 semantic category of Pascal VOC dataset with a 7:3:3 training/validation/testing
+split. Proposal Flow dataset with 900 image pairs from 5 categories. We randomly split the
+Proposal Flow dataset into 3 folds for k-fold validation in the test. Table 1 compares PCK scores for Arbicon-Net and baseline models for the test
+result on PF-Pascal dataset. The comparison result indicates that Arbicon-Net outperforms all baseline
+methods. To better illustrate the comparison results, we further show two pair images before and
+after image registration in Figure.2. The first two columns show the source and target images, the third
+column illustrates the transformed source image by Arbicon-Net and the fourth column illustrates the
+transformed source image by WeakAlign-4D. As we can see from the Figure, compared to baseline method WeakAlign-4D, Arbicon-Net is able to predict a fine-grained geometric transformation with
+coherent flow motion and preservation of local geometric structural details. </p>
+<img src="./figures/JianchunChen3.png" width="600"/>
+<p>Figure 2: Qualitative results on PF-Pascal dataset with
+weakly supervise training.</p>
 </div>
 <!-- <ul style="list-style: none;"><li> -->
 <script type="text/javascript" src="./Andrew Owens_files/footer.js"></script>
