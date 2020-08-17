@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>xing2017arbitext</title>
-    <meta property="og:title" content="xing2017arbitext"/>
+    <title>xu2017greedy_short</title>
+    <meta property="og:title" content="xu2017greedy_short"/>
 
     <link rel="stylesheet" type="text/css" href="../../../style.css">
 </head>
@@ -12,7 +12,7 @@
 <!-- Title -->
 <br>
 <center>
-    <span style="font-size:38px">Arbitext: Arbitrary-oriented text detection in unconstrained scene</span>
+    <span style="font-size:38px">Greedy criterion in orthogonal greedy learning</span>
 </center>
 
 <!-- Authors -->
@@ -21,17 +21,22 @@
     <tr>
         <td align=center width=100px>
             <center>
-                <span style="font-size:20px"><a href="#">Daitao Xing</a><sup>1,2</sup></span>
+                <span style="font-size:20px"><a href="#">Lin Xu</a><sup>1,2</sup></span>
             </center>
         </td>
         <td align=center width=100px>
             <center>
-                <span style="font-size:20px"><a href="#">Zichen Li</a><sup>1,2</sup></span>
+                <span style="font-size:20px"><a href="#">Shaobo Lin</a><sup></sup></span>
             </center>
         </td>
         <td align=center width=100px>
             <center>
-                <span style="font-size:20px"><a href="#"> Xin Chen</a><sup>4</sup></span>
+                <span style="font-size:20px"><a href="#">Lin, Jinshan Zeng</a><sup></sup></span>
+            </center>
+        </td>
+				<td align=center width=100px>
+            <center>
+                <span style="font-size:20px"><a href="#">Xia Liu</a><sup></sup></span>
             </center>
         </td>
 				<td align=center width=100px>
@@ -39,7 +44,11 @@
                 <span style="font-size:20px"><a href="#">Yi Fang</a><sup>1,2,3</sup></span>
             </center>
         </td>
-
+				<td align=center width=100px>
+            <center>
+                <span style="font-size:20px"><a href="#"> Zongben Xu</a><sup></sup></span>
+            </center>
+        </td>
     </tr>
 </table>
 
@@ -87,11 +96,6 @@
         <td align=center width=100px>
             <center>
                 <span style="font-size:20px"><sup>3</sup>New York University Tandon School of Engineering</span>
-            </center>
-        </td>
-				<td align=center width=100px>
-            <center>
-                <span style="font-size:20px"><sup>3</sup>HERE Technologies</span>
             </center>
         </td>
 <!--        <td align=center width=100px>-->
@@ -142,16 +146,19 @@
     <td width=600px>
         <br>
         <p align="justify" style="font-size: 18px">
-					Arbitrary-oriented text detection in the wild is a very
-challenging task, due to the aspect ratio, scale, orientation, and illumination variations. In this paper, we propose a novel method, namely Arbitrary-oriented Text (or
-ArbText for short) detector, for efficient text detection in
-unconstrained natural scene images. Specifically, we first
-adopt the circle anchors rather than the rectangular ones
-to represent bounding boxes, which is more robust to orientation variations. Subsequently, we incorporate a pyramid pooling module into the Single Shot MultiBox Detector framework, in order to simultaneously explore the local and global visual information, which can therefore generate more confidential detection results. Experiments on
-established scene-text datasets, such as the ICDAR 2015
-and MSRA-TD500 datasets, have demonstrated the superior performance of the proposed method, compared to the
-state-of-the-art approaches.
-
+					Orthogonal greedy learning (OGL) is a stepwise
+learning scheme that starts with selecting a new atom from a
+specified dictionary via the steepest gradient descent (SGD) and
+then builds the estimator through orthogonal projection. In this
+paper, we found that SGD is not the unique greedy criterion and
+introduced a new greedy criterion, called as “δ-greedy threshold”
+for learning. Based on this new greedy criterion, we derived a
+straightforward termination rule for OGL. Our theoretical study
+shows that the new learning scheme can achieve the existing
+(almost) optimal learning rate of OGL. Numerical experiments
+are also provided to support that this new scheme can achieve
+almost optimal generalization performance while requiring less
+computation than OGL.
         </p>
     </td>
 </tr>
@@ -165,12 +172,12 @@ state-of-the-art approaches.
     <center><h1>News</h1></center>
     <tr>
         <ul>
-            <li>[Mar. 2017] <font color='red'>ArXiv preprint, 2017</font></li>
+            <li>[Mar. 2017] <font color='red'>Publicated at IEEE transactions on cybernetics, 2017</font></li>
         </ul>
     </tr>
 </table>
 
-<!-- Publicated at-->
+<!-- Video -->
 <!--<br>-->
 <!--<hr>-->
 <!--<table align=center width=800>-->
@@ -201,17 +208,17 @@ state-of-the-art approaches.
     <center><h1>Paper</h1></center>
     <tr>
         <td>
-            <a href="https://arxiv.org/pdf/1711.11249.pdf" target="_blank">
+            <a href="https://ieeexplore.ieee.org/iel7/6221036/6352949/07862802.pdf" target="_blank">
                 <img style="height:180px; border: solid; border-radius:30px;" src="./resources/paper.png"/>
             </a>
         </td>
         <td>
-            <span style="font-size:18px">Daitao Xing, Zichen Li, Xin Chen, and Yi Fang
+            <span style="font-size:18px">Lin Xu, Shaobo Lin, Jinshan Zeng, Xia Liu, Yi Fang, and Zongben Xu
                 <!-- <br> More authors <br> More authors -->
                 <br><br>
-               {Arbitext: Arbitrary-oriented text detection in unconstrained scene
+               {Greedy criterion in orthogonal greedy learning
                 <br><br>
-                 arXiv preprint, 2017
+                 IEEE transactions on cybernetics, 2017
                 <br>
             </span>
         </td>
@@ -225,7 +232,7 @@ state-of-the-art approaches.
         <td>
             <span style="font-size:18px">
                 <center>
-                    <a href="https://arxiv.org/pdf/1711.11249.pdf">[Paper]</a>
+                    <a href="https://ieeexplore.ieee.org/iel7/6221036/6352949/07862802.pdf">[Paper]</a>
                 </center>
             </span>
         </td>
