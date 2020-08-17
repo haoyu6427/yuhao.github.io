@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>zhu2019structure</title>
-    <meta property="og:title" content="zhu2019structure"/>
+    <title>zhu2018learning_short</title>
+    <meta property="og:title" content="zhu2018learning_short"/>
 
     <link rel="stylesheet" type="text/css" href="../../../style.css">
 </head>
@@ -12,7 +12,7 @@
 <!-- Title -->
 <br>
 <center>
-    <span style="font-size:38px">Structure-Attentioned Memory Network for Monocular Depth Estimation</span>
+    <span style="font-size:38px">Learning to synthesize 3d indoor scenes from monocular images</span>
 </center>
 
 <!-- Authors -->
@@ -21,32 +21,32 @@
     <tr>
         <td align=center width=100px>
             <center>
-                <span style="font-size:20px"><a href="#">Jing Zhu</a><sup>1,2,3</sup></span>
+                <span style="font-size:20px"><a href="#">Fan Zhu</a><sup>1,2</sup></span>
             </center>
         </td>
         <td align=center width=100px>
             <center>
-                <span style="font-size:20px"><a href="#">Yunxiao Shi</a><sup>1,2</sup></span>
+                <span style="font-size:20px"><a href="#">Li Liu</a><sup>1,2</sup></span>
             </center>
         </td>
 				<td align=center width=100px>
             <center>
-                <span style="font-size:20px"><a href="#">Mengwei Ren</a><sup>1,2</sup></span>
+                <span style="font-size:20px"><a href="#">Jin Xie</a><sup>1,2</sup></span>
+            </center>
+        </td>
+				<td align=center width=100px>
+            <center>
+                <span style="font-size:20px"><a href="#">Fumin Shen</a><sup>4</sup></span>
+            </center>
+        </td>
+				<td align=center width=100px>
+            <center>
+                <span style="font-size:20px"><a href="#">Ling Shao</a><sup>1,2</sup></span>
             </center>
         </td>
 				<td align=center width=100px>
             <center>
                 <span style="font-size:20px"><a href="#">Yi Fang</a><sup>1,2,3</sup></span>
-            </center>
-        </td>
-				<td align=center width=100px>
-            <center>
-                <span style="font-size:20px"><a href="#">Kuo-Chin Lien</a><sup>1,2</sup></span>
-            </center>
-        </td>
-				<td align=center width=100px>
-            <center>
-                <span style="font-size:20px"><a href="#">Junli Gu</a><sup>1,2,3</sup></span>
             </center>
         </td>
     </tr>
@@ -100,7 +100,7 @@
         </td>
 				<td align=center width=100px>
             <center>
-                <span style="font-size:20px"><sup>3</sup>XMotors.ai</span>
+                <span style="font-size:20px"><sup>3</sup>University of Electronic Science and Technology of China Chengdu</span>
             </center>
         </td>
 <!--        <td align=center width=100px>-->
@@ -151,28 +151,28 @@
     <td width=600px>
         <br>
         <p align="justify" style="font-size: 18px">
-					Monocular depth estimation is a challenging task that aims to
-predict a corresponding depth map from a given single RGB
-image. Recent deep learning models have been proposed to
-predict the depth from the image by learning the alignment
-of deep features between the RGB image and the depth domains. In this paper, we present a novel approach, named
-Structure-Attentioned Memory Network, to more effectively
-transfer domain features for monocular depth estimation by
-taking into account the common structure regularities (e.g.,
-repetitive structure patterns, planar surfaces, symmetries) in
-domain adaptation. To this end, we introduce a new StructureOriented Memory (SOM) module to learn and memorize the
-structure-specific information between RGB image domain
-and the depth domain. More specifically, in the SOM module, we develop a Memorable Bank of Filters (MBF) unit
-to learn a set of filters that memorize the structure-aware
-image-depth residual pattern, and also an Attention Guided
-Controller (AGC) unit to control the filter selection in the
-MBF given image features queries. Given the query image
-feature, the trained SOM module is able to adaptively select
-the best customized filters for cross-domain feature transferring with an optimal structural disparity between image and
-depth. In summary, we focus on addressing this structurespecific domain adaption challenge by proposing a novel endto-end multi-scale memorable network for monocular depth
-estimation. The experiments show that our proposed model
-demonstrates the superior performance compared to the existing supervised monocular depth estimation approaches on
-the challenging KITTI and NYU Depth V2 benchmarks.
+					Depth images have always been playing critical roles for indoor
+scene understanding problems, and are particularly important for
+tasks in which 3D inferences are involved. However, since depth
+images are not universally available, abandoning them from the
+testing stage can significantly improve the generality of a method.
+In this work, we consider the scenarios where depth images are not
+available in the testing data, and propose to learn a convolutional
+long short-term memory (Conv LSTM) network and a regression
+convolutional neural network (regression ConvNet) using only
+monocular RGB images. The proposed networks benefit from 2D
+segmentations, object-level spatial context, object-scene dependencies and objects’ geometric information, where optimization
+is governed by the semantic label loss, which measures the label
+consistencies of both objects and scenes, and the 3D geometrical
+loss, which measures the correctness of objects’ 6Dof estimation.
+Conv LSTM and regression ConvNet are applied to scene/object
+classification, object detection and 6Dof estimation tasks respectively, where we utilize the joint inference from both networks
+and further provide the perspective of synthesizing fully rigged 3D
+scenes according to objects’ arrangements in monocular images.
+Both quantitative and qualitative experimental results are provided
+on the NYU-v2 dataset, and we demonstrate that the proposed Conv
+LSTM can achieve state-of-the-art performance without requiring
+the depth information.
 
 
 
@@ -189,7 +189,7 @@ the challenging KITTI and NYU Depth V2 benchmarks.
     <center><h1>News</h1></center>
     <tr>
         <ul>
-            <li>[Apr. 2017] <font color='red'>ArXiv preprint, 2019</font></li>
+            <li>[Apr. 2017] <font color='red'>26th ACM International Conference on Multimedia(ACM), 2018</font></li>
         </ul>
     </tr>
 </table>
@@ -225,16 +225,16 @@ the challenging KITTI and NYU Depth V2 benchmarks.
     <center><h1>Paper</h1></center>
     <tr>
         <td>
-            <a href="https://arxiv.org/abs/1909.04594" target="_blank">
+            <a href="https://dl.acm.org/doi/pdf/10.1145/3240508.3240700" target="_blank">
                 <img style="height:180px; border: solid; border-radius:30px;" src="./resources/paper.png"/>
             </a>
         </td>
         <td>
-            <span style="font-size:18px">Jing Zhu, Yunxiao Shi, Mengwei Ren, Yi Fang, Kuo-Chin Lien, Junli Gu
+            <span style="font-size:18px">Fan Zhu, Li Liu, Jin Xie, Fumin Shen, Ling Shao, Yi Fang
 							<br><br>
-               {Structure-Attentioned Memory Network for Monocular Depth Estimation
+               {Learning to synthesize 3d indoor scenes from monocular images
                 <br><br>
-                 ArXiv preprint, 2019
+                 ACM, 2018
                 <br>
             </span>
         </td>
@@ -247,7 +247,7 @@ the challenging KITTI and NYU Depth V2 benchmarks.
         <td>
             <span style="font-size:18px">
                 <center>
-                    <a href="https://arxiv.org/abs/1909.04594">[Paper]</a>
+                    <a href="https://dl.acm.org/doi/pdf/10.1145/3240508.3240700">[Paper]</a>
                 </center>
             </span>
         </td>
