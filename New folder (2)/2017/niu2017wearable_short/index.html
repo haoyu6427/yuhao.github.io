@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>dai2017metric_short</title>
-    <meta property="og:title" content="dai2017metric_short"/>
+    <title>niu2017wearable_short</title>
+    <meta property="og:title" content="niu2017wearable_short"/>
 
     <link rel="stylesheet" type="text/css" href="../../../style.css">
 </head>
@@ -12,7 +12,7 @@
 <!-- Title -->
 <br>
 <center>
-    <span style="font-size:38px">Metric-based generative adversarial network</span>
+    <span style="font-size:38px">A wearable assistive technology for the visually impaired with door knob detection and real-time feedback for hand-to-handle manipulation</span>
 </center>
 
 <!-- Authors -->
@@ -21,15 +21,29 @@
     <tr>
         <td align=center width=100px>
             <center>
-                <span style="font-size:20px"><a href="#">Guoxian Dai</a><sup>1,2</sup></span>
+                <span style="font-size:20px"><a href="#">Liang Niu</a><sup>1,2</sup></span>
             </center>
         </td>
         <td align=center width=100px>
             <center>
-                <span style="font-size:20px"><a href="#">Jin Xie</a><sup>1,2</sup></span>
+                <span style="font-size:20px"><a href="#">Cheng Qian</a><sup>1,2</sup></span>
             </center>
         </td>
-
+        <td align=center width=100px>
+            <center>
+                <span style="font-size:20px"><a href="#"> John-Ross Rizzo</a><sup>4</sup></span>
+            </center>
+        </td>
+				<td align=center width=100px>
+            <center>
+                <span style="font-size:20px"><a href="#">Todd Hudson</a><sup>1,2</sup></span>
+            </center>
+        </td>
+				<td align=center width=100px>
+            <center>
+                <span style="font-size:20px"><a href="#">Zichen Li</a><sup>1,2</sup></span>
+            </center>
+        </td>
 				<td align=center width=100px>
             <center>
                 <span style="font-size:20px"><a href="#">Yi Fang</a><sup>1,2,3</sup></span>
@@ -84,6 +98,11 @@
                 <span style="font-size:20px"><sup>3</sup>New York University Tandon School of Engineering</span>
             </center>
         </td>
+				<td align=center width=100px>
+            <center>
+                <span style="font-size:20px"><sup>3</sup>NYU Langone Medical Center</span>
+            </center>
+        </td>
 <!--        <td align=center width=100px>-->
 <!--            <center>-->
 <!--                <span style="font-size:20px"><sup>2</sup>University of East Anglia</span>-->
@@ -132,26 +151,22 @@
     <td width=600px>
         <br>
         <p align="justify" style="font-size: 18px">
-					Existing methods of generative adversarial network (GAN) use
-different criteria to distinguish between real and fake samples, such
-as probability, energy or other losses. In this paper, by
-employing the merits of deep metric learning, we propose a novel
-metric-based generative adversarial network (MBGAN), which uses
-the distance-criteria to distinguish between real and fake samples.
-Specifically, the discriminator of MBGAN adopts a triplet structure
-and learns a deep nonlinear transformation, which maps input
-samples into a new feature space. In the transformed space, the
-distance between real samples is minimized, while the distance
-between real sample and fake sample is maximized. Similar to the
-adversarial procedure of existing GANs, a generator is trained to
-produce synthesized examples, which are close to real examples,
-while a discriminator is trained to maximize the distance between
-real and fake samples to a large margin. Meanwhile, instead of using
-a fixed margin, we adopt a data-dependent margin, so that the
-generator could focus on improving the synthesized samples with
-poor quality, instead of wasting energy on well-produce samples.
-Our proposed method is verified on various benchmarks, such as
-CIFAR-10, SVHN and CelebA, and generates high-quality samples
+					The visually impaired are consistently faced with mobility restrictions due to the lack of truly accessible environments. Even in structured settings, people with low vision may still have trouble navigating efficiently and safely
+due to hallway and threshold ambiguity. Assistive technologies that are currently available do not provide door and
+door-handle object detections nor do they concretely help
+the visually impaired reaching towards the object. In this
+paper, we propose an AI-driven wearable assistive technology that integrates door handle detection, user’s real-time
+hand position in relation to this targeted object, and audio feedback for “joy stick-like command” for acquisition
+of the target and subsequent hand-to-handle manipulation.
+When fully envisioned, this platform will help end users locate doors and door handles and reach them with feedback,
+enabling them to travel safely and efficiently when navigating through environments with thresholds. Compared to
+the usual computer vision models, the one proposed in this
+paper requires significantly fewer computational resources,
+which allows it to pair with a stereoscopic camera running
+on a small graphics processing unit (GPU). This permits us
+to take advantage of its convenient portability. We also introduce a dataset containing different types of door handles
+and door knobs with bounding-box annotations, which can
+be used for training and testing in future research.
 
 
         </p>
@@ -167,7 +182,7 @@ CIFAR-10, SVHN and CelebA, and generates high-quality samples
     <center><h1>News</h1></center>
     <tr>
         <ul>
-            <li>[Apr. 2017] <font color='red'>25th ACM International Conference on Multimedia(ACM), 2017</font></li>
+            <li>[Apr. 2017] <font color='red'>IEEE International Conference on Computer Vision Workshops(ICCV), 2017</font></li>
         </ul>
     </tr>
 </table>
@@ -203,16 +218,16 @@ CIFAR-10, SVHN and CelebA, and generates high-quality samples
     <center><h1>Paper</h1></center>
     <tr>
         <td>
-            <a href="https://dl.acm.org/doi/pdf/10.1145/3123266.3123334" target="_blank">
+            <a href="http://openaccess.thecvf.com/content_ICCV_2017_workshops/papers/w22/Niu_A_Wearable_Assistive_ICCV_2017_paper.pdf" target="_blank">
                 <img style="height:180px; border: solid; border-radius:30px;" src="./resources/paper.png"/>
             </a>
         </td>
         <td>
             <span style="font-size:18px">Liang Niu, Cheng Qian, John-Ross Rizzo, Todd Hudson, Zichen Li, Yi Fang
 							<br><br>
-               {Metric-based generative adversarial network
+               {A wearable assistive technology for the visually impaired with door knob detection and real-time feedback for hand-to-handle manipulation
                 <br><br>
-                 ACM, 2017
+                 ICCV, 2017
                 <br>
             </span>
         </td>
@@ -225,7 +240,7 @@ CIFAR-10, SVHN and CelebA, and generates high-quality samples
         <td>
             <span style="font-size:18px">
                 <center>
-                    <a href="https://dl.acm.org/doi/pdf/10.1145/3123266.3123334">[Paper]</a>
+                    <a href="http://openaccess.thecvf.com/content_ICCV_2017_workshops/papers/w22/Niu_A_Wearable_Assistive_ICCV_2017_paper.pdf">[Paper]</a>
                 </center>
             </span>
         </td>
