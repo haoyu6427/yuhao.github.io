@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>zhu2018learning_short</title>
-    <meta property="og:title" content="zhu2018learning_short"/>
+    <title>dai2017metric_short</title>
+    <meta property="og:title" content="dai2017metric_short"/>
 
     <link rel="stylesheet" type="text/css" href="../../../style.css">
 </head>
@@ -12,7 +12,7 @@
 <!-- Title -->
 <br>
 <center>
-    <span style="font-size:38px">Learning to synthesize 3d indoor scenes from monocular images</span>
+    <span style="font-size:38px">Metric-based generative adversarial network</span>
 </center>
 
 <!-- Authors -->
@@ -21,29 +21,15 @@
     <tr>
         <td align=center width=100px>
             <center>
-                <span style="font-size:20px"><a href="#">Fan Zhu</a><sup>1,2</sup></span>
+                <span style="font-size:20px"><a href="#">Guoxian Dai</a><sup>1,2</sup></span>
             </center>
         </td>
         <td align=center width=100px>
             <center>
-                <span style="font-size:20px"><a href="#">Li Liu</a><sup>1,2</sup></span>
-            </center>
-        </td>
-				<td align=center width=100px>
-            <center>
                 <span style="font-size:20px"><a href="#">Jin Xie</a><sup>1,2</sup></span>
             </center>
         </td>
-				<td align=center width=100px>
-            <center>
-                <span style="font-size:20px"><a href="#">Fumin Shen</a><sup>4</sup></span>
-            </center>
-        </td>
-				<td align=center width=100px>
-            <center>
-                <span style="font-size:20px"><a href="#">Ling Shao</a><sup>1,2</sup></span>
-            </center>
-        </td>
+
 				<td align=center width=100px>
             <center>
                 <span style="font-size:20px"><a href="#">Yi Fang</a><sup>1,2,3</sup></span>
@@ -98,11 +84,6 @@
                 <span style="font-size:20px"><sup>3</sup>New York University Tandon School of Engineering</span>
             </center>
         </td>
-				<td align=center width=100px>
-            <center>
-                <span style="font-size:20px"><sup>3</sup>University of Electronic Science and Technology of China Chengdu</span>
-            </center>
-        </td>
 <!--        <td align=center width=100px>-->
 <!--            <center>-->
 <!--                <span style="font-size:20px"><sup>2</sup>University of East Anglia</span>-->
@@ -151,29 +132,26 @@
     <td width=600px>
         <br>
         <p align="justify" style="font-size: 18px">
-					Depth images have always been playing critical roles for indoor
-scene understanding problems, and are particularly important for
-tasks in which 3D inferences are involved. However, since depth
-images are not universally available, abandoning them from the
-testing stage can significantly improve the generality of a method.
-In this work, we consider the scenarios where depth images are not
-available in the testing data, and propose to learn a convolutional
-long short-term memory (Conv LSTM) network and a regression
-convolutional neural network (regression ConvNet) using only
-monocular RGB images. The proposed networks benefit from 2D
-segmentations, object-level spatial context, object-scene dependencies and objects’ geometric information, where optimization
-is governed by the semantic label loss, which measures the label
-consistencies of both objects and scenes, and the 3D geometrical
-loss, which measures the correctness of objects’ 6Dof estimation.
-Conv LSTM and regression ConvNet are applied to scene/object
-classification, object detection and 6Dof estimation tasks respectively, where we utilize the joint inference from both networks
-and further provide the perspective of synthesizing fully rigged 3D
-scenes according to objects’ arrangements in monocular images.
-Both quantitative and qualitative experimental results are provided
-on the NYU-v2 dataset, and we demonstrate that the proposed Conv
-LSTM can achieve state-of-the-art performance without requiring
-the depth information.
-
+					Existing methods of generative adversarial network (GAN) use
+different criteria to distinguish between real and fake samples, such
+as probability, energy or other losses. In this paper, by
+employing the merits of deep metric learning, we propose a novel
+metric-based generative adversarial network (MBGAN), which uses
+the distance-criteria to distinguish between real and fake samples.
+Specifically, the discriminator of MBGAN adopts a triplet structure
+and learns a deep nonlinear transformation, which maps input
+samples into a new feature space. In the transformed space, the
+distance between real samples is minimized, while the distance
+between real sample and fake sample is maximized. Similar to the
+adversarial procedure of existing GANs, a generator is trained to
+produce synthesized examples, which are close to real examples,
+while a discriminator is trained to maximize the distance between
+real and fake samples to a large margin. Meanwhile, instead of using
+a fixed margin, we adopt a data-dependent margin, so that the
+generator could focus on improving the synthesized samples with
+poor quality, instead of wasting energy on well-produce samples.
+Our proposed method is verified on various benchmarks, such as
+CIFAR-10, SVHN and CelebA, and generates high-quality samples
 
 
         </p>
@@ -189,7 +167,7 @@ the depth information.
     <center><h1>News</h1></center>
     <tr>
         <ul>
-            <li>[Apr. 2017] <font color='red'>26th ACM International Conference on Multimedia(ACM), 2018</font></li>
+            <li>[Apr. 2017] <font color='red'>25th ACM International Conference on Multimedia(ACM), 2017</font></li>
         </ul>
     </tr>
 </table>
@@ -225,16 +203,16 @@ the depth information.
     <center><h1>Paper</h1></center>
     <tr>
         <td>
-            <a href="https://dl.acm.org/doi/pdf/10.1145/3240508.3240700" target="_blank">
+            <a href="https://dl.acm.org/doi/pdf/10.1145/3123266.3123334" target="_blank">
                 <img style="height:180px; border: solid; border-radius:30px;" src="./resources/paper.png"/>
             </a>
         </td>
         <td>
-            <span style="font-size:18px">Fan Zhu, Li Liu, Jin Xie, Fumin Shen, Ling Shao, Yi Fang
+            <span style="font-size:18px">Guoxian Dai, Jin Xie, Yi Fang
 							<br><br>
-               {Learning to synthesize 3d indoor scenes from monocular images
+               {Metric-based generative adversarial network
                 <br><br>
-                 ACM, 2018
+                 ACM, 2017
                 <br>
             </span>
         </td>
@@ -247,7 +225,7 @@ the depth information.
         <td>
             <span style="font-size:18px">
                 <center>
-                    <a href="https://dl.acm.org/doi/pdf/10.1145/3240508.3240700">[Paper]</a>
+                    <a href="https://dl.acm.org/doi/pdf/10.1145/3123266.3123334">[Paper]</a>
                 </center>
             </span>
         </td>
