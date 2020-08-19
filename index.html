@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>zhu2019structure</title>
-    <meta property="og:title" content="zhu2019structure"/>
+    <title>patel2017reducing_short</title>
+    <meta property="og:title" content="patel2017reducing_short"/>
 
     <link rel="stylesheet" type="text/css" href="../../../style.css">
 </head>
@@ -12,7 +12,7 @@
 <!-- Title -->
 <br>
 <center>
-    <span style="font-size:38px">Structure-Attentioned Memory Network for Monocular Depth Estimation</span>
+    <span style="font-size:38px">Reducing operator workload for indoor navigation of autonomous robots via multimodal sensor fusion</span>
 </center>
 
 <!-- Authors -->
@@ -21,17 +21,12 @@
     <tr>
         <td align=center width=100px>
             <center>
-                <span style="font-size:20px"><a href="#">Jing Zhu</a><sup>1,2,3</sup></span>
+                <span style="font-size:20px"><a href="#">Naman Patel</a><sup>1,2</sup></span>
             </center>
         </td>
         <td align=center width=100px>
             <center>
-                <span style="font-size:20px"><a href="#">Yunxiao Shi</a><sup>1,2</sup></span>
-            </center>
-        </td>
-				<td align=center width=100px>
-            <center>
-                <span style="font-size:20px"><a href="#">Mengwei Ren</a><sup>1,2</sup></span>
+                <span style="font-size:20px"><a href="#">Prashanth Krishnamurthy</a><sup>1,2</sup></span>
             </center>
         </td>
 				<td align=center width=100px>
@@ -41,12 +36,7 @@
         </td>
 				<td align=center width=100px>
             <center>
-                <span style="font-size:20px"><a href="#">Kuo-Chin Lien</a><sup>1,2</sup></span>
-            </center>
-        </td>
-				<td align=center width=100px>
-            <center>
-                <span style="font-size:20px"><a href="#">Junli Gu</a><sup>1,2,3</sup></span>
+                <span style="font-size:20px"><a href="#">Farshad Khorrami</a><sup>1,2</sup></span>
             </center>
         </td>
     </tr>
@@ -151,28 +141,18 @@
     <td width=600px>
         <br>
         <p align="justify" style="font-size: 18px">
-					Monocular depth estimation is a challenging task that aims to
-predict a corresponding depth map from a given single RGB
-image. Recent deep learning models have been proposed to
-predict the depth from the image by learning the alignment
-of deep features between the RGB image and the depth domains. In this paper, we present a novel approach, named
-Structure-Attentioned Memory Network, to more effectively
-transfer domain features for monocular depth estimation by
-taking into account the common structure regularities (e.g.,
-repetitive structure patterns, planar surfaces, symmetries) in
-domain adaptation. To this end, we introduce a new StructureOriented Memory (SOM) module to learn and memorize the
-structure-specific information between RGB image domain
-and the depth domain. More specifically, in the SOM module, we develop a Memorable Bank of Filters (MBF) unit
-to learn a set of filters that memorize the structure-aware
-image-depth residual pattern, and also an Attention Guided
-Controller (AGC) unit to control the filter selection in the
-MBF given image features queries. Given the query image
-feature, the trained SOM module is able to adaptively select
-the best customized filters for cross-domain feature transferring with an optimal structural disparity between image and
-depth. In summary, we focus on addressing this structurespecific domain adaption challenge by proposing a novel endto-end multi-scale memorable network for monocular depth
-estimation. The experiments show that our proposed model
-demonstrates the superior performance compared to the existing supervised monocular depth estimation approaches on
-the challenging KITTI and NYU Depth V2 benchmarks.
+					We present a novel framework for operator assistance in
+indoor navigation and map building wherein the ground
+vehicle learns to navigate by imitating the operator commands while training. Our framework reduces the workload
+on the human operator simplifying the process of human
+robot interaction. An end to end architecture is presented
+which takes inputs from camera and LIDAR and outputs
+the steering angle for the ground vehicle to navigate through
+an indoor environment. The presented framework includes
+static obstacle avoidance during navigation and map building. The architecture is made more reliable by an on-line
+mechanism in which the robot introspects its output and decides whether to rely on its output or transfer vehicle control
+to a human pilot. The end to end trained framework implicitly learns to avoid obstacles. We show that our framework
+works under various cases where other frameworks fail.
 
 
 
@@ -189,7 +169,7 @@ the challenging KITTI and NYU Depth V2 benchmarks.
     <center><h1>News</h1></center>
     <tr>
         <ul>
-            <li>[Apr. 2017] <font color='red'>ArXiv preprint, 2019</font></li>
+            <li>[Apr. 2017] <font color='red'>ACM/IEEE International Conference on Human-Robot Interaction, 2019</font></li>
         </ul>
     </tr>
 </table>
@@ -225,21 +205,12 @@ the challenging KITTI and NYU Depth V2 benchmarks.
     <center><h1>Paper</h1></center>
     <tr>
         <td>
-            <a href="https://arxiv.org/abs/1909.04594" target="_blank">
+            <a href="https://dl.acm.org/doi/pdf/10.1145/3029798.3038368" target="_blank">
                 <img style="height:180px; border: solid; border-radius:30px;" src="./resources/paper.png"/>
             </a>
         </td>
         <td>
-            <span style="font-size:18px">Jing Zhu, Yunxiao Shi, Mengwei Ren, Yi Fang, Kuo-Chin Lien, Junli Gu
-							<br><br>
-               {Structure-Attentioned Memory Network for Monocular Depth Estimation
-                <br><br>
-                 ArXiv preprint, 2019
-                <br>
-            </span>
-        </td>
-    </tr>
-</table>
+            <span style="font-size:18px">Naman Patel, Prashanth Krishnamurthy, Yi Fang, Farshad Khorrami
 <!-- Paper links -->
 <br>
 <table align=center width=700px>
@@ -247,7 +218,7 @@ the challenging KITTI and NYU Depth V2 benchmarks.
         <td>
             <span style="font-size:18px">
                 <center>
-                    <a href="https://arxiv.org/abs/1909.04594">[Paper]</a>
+                    <a href="https://dl.acm.org/doi/pdf/10.1145/3029798.3038368">[Paper]</a>
                 </center>
             </span>
         </td>
@@ -271,16 +242,7 @@ the challenging KITTI and NYU Depth V2 benchmarks.
 <! -- Model -->
 <br>
 <hr>
-<center>
-    <h1>Model</h1>
-</center>
-<table align=center width="1024px">
-    <tr>
-        <center>
-            <img class="round" src="./resources/model.png" width="700px"/>
-        </center>
-    </tr>
-</table>
+
 
 <!-- Results -->
 <br>
@@ -318,20 +280,6 @@ the challenging KITTI and NYU Depth V2 benchmarks.
         </td>
     </tr>
 
-    <tr>
-        <td colspan='2'>
-            <center>
-                <img src="./resources/result3.png" width="700px"/><br>
-            </center>
-        </td>
-    </tr>
-    <tr>
-        <td colspan='2'>
-            <center>
-                <span style="font-size:18px"></span>
-            </center>
-        </td>
-    </tr>
 </table>
 
 <!-- Credit -->
